@@ -8,11 +8,19 @@
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.5.2",
     "@types/node": "^16.18.119",
-    "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
+    "aos": "^2.3.4",
+    "bootstrap": "^5.3.3",
+    "bootstrap-icons": "^1.11.3",
+    "glightbox": "^3.3.0",
+    "import": "^0.0.6",
+    "isotope-layout": "^3.0.6",
     "react": "^18.3.1",
+    "react-bootstrap": "^2.10.5",
     "react-dom": "^18.3.1",
+    "react-router-dom": "^6.28.0",
     "react-scripts": "5.0.1",
+    "swiper": "^11.1.14",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },
@@ -39,5 +47,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/aos": "^3.0.7",
+    "@types/bootstrap": "^5.2.10",
+    "@types/react": "^18.3.12",
+    "@types/react-bootstrap": "^0.32.37"
   }
 }
