@@ -2854,3 +2854,147 @@ section,
     text-align: left; /* Aligner le texte à gauche */
   }
 }
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+/* Éviter le défilement horizontal */
+body {
+  overflow-x: hidden;
+}
+/*  */
+/* Overlay.css */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8); /* Fond semi-transparent noir */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Assurez-vous que l'overlay est au-dessus de tout le reste */
+}
+
+.overlay-content {
+  text-align: center;
+  background: #fff; /* Fond blanc */
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre pour un effet de profondeur */
+  color: #333; /* Couleur du texte gris foncé */
+}
+
+.overlay-content h2 {
+  margin-bottom: 20px;
+  color: #ff6600; /* Couleur orange pour le titre */
+}
+
+.overlay-content p {
+  margin-bottom: 20px;
+  color: #666; /* Couleur du texte gris */
+}
+
+.overlay-content button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #ff6600; /* Couleur de fond orange */
+  color: #fff; /* Couleur du texte blanc */
+  transition: background-color 0.3s ease;
+}
+
+.overlay-content button:hover {
+  background-color: #cc5200; /* Couleur de fond orange foncé au survol */
+}
+
+/* CSS pour appliquer la couleur du texte "Contactez-nous" aux liens d'adresse, email et téléphone */
+
+/* Définir la couleur du texte pour tous les liens dans la section de contact */
+.contact-link {
+  color: inherit; /* Cela héritera de la couleur du texte environnant */
+  text-decoration: none; /* Supprime la décoration du lien */
+}
+
+/* Si vous voulez une couleur spécifique, vous pouvez la définir comme suit : */
+.contact-link {
+  color: #aaaaaa; /* Exemple: couleur du texte, changez selon votre design */
+}
+
+/* Ajoutez un effet au survol si vous le souhaitez */
+.contact-link:hover {
+  color: #ff6600; /* Exemple: change la couleur au survol, orange foncé */
+  text-decoration: underline;
+}
+
+/* Pricing.css */
+/* .pricing-item {
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.pricing-item:hover {
+  border-color: #ff6600; /* Couleur orange pour le survol */
+/* } */
+
+/* .pricing-item.selected {
+  border-color: #ff6600; /* Couleur orange pour l'élément sélectionné */
+/* } */
+*/
+
+/* .cta-btn {
+  background-color: #ff6600; /* Couleur de fond orange */
+  /* color: #fff; /* Couleur du texte blanc */
+  /* border: none; */
+  /* padding: 10px 20px; */ */
+  /* cursor: pointer; */
+  /* transition: background-color 0.3s ease, border-color 0.3s ease;
+} */ */
+
+/* .cta-btn:hover {
+  background-color: #cc5200; /* Couleur de fond orange foncé au survol */
+  /* border-color: #cc5200; Couleur de bordure orange foncé au survol */
+/* } */ */ */
+/* Style de base pour les boutons */
+.cta-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  text-align: center;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Bouton gris (état non sélectionné) */
+.btn-gray {
+  background-color: #d3d3d3;
+  color: #333;
+  pointer-events: none; /* Désactive le bouton si non sélectionné */
+  cursor: not-allowed;
+}
+
+/* Bouton orange (état sélectionné) */
+.btn-orange {
+  background-color: #f39c12;
+  color: #fff;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+/* Effet de survol */
+.cta-btn:hover {
+  opacity: 0.8;
+}
+
+/* Style pour le plan sélectionné */
+.selected {
+  border: 2px solid #f39c12; /* Optionnel : ajouter une bordure autour du plan sélectionné */
+}

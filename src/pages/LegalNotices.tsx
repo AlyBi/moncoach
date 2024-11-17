@@ -141,3 +141,5 @@ const LegalNotices = () => {
 };
 
 export default LegalNotices;
+
+

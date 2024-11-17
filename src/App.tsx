@@ -81,7 +81,7 @@ const App = () => {
         <Route path="/testimonials-simpl" element={<TestimonialsSimpl />} />
         <Route path="/services/:id" element={<ServiceDetails title="Service Title" description="Service Description" imageUrl="image-url.jpg" highlights={["Highlight 1", "Highlight 2"]} />} />
         <Route path="/services" element={<ServicesList services={[]} activeService="" onServiceClick={() => { }} />} />
-
+        <Route path="*" element={<Home />} /> {/* Redirige toutes les autres routes vers Home */}
       </Routes>
       <Footer />
     </Router>
