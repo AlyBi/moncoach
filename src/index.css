@@ -2582,29 +2582,27 @@ section,
     gold
   ); /* Dégradé plus foncé au survol */
   color: white;
-} /*--------------------------------------------------------------
+}
+/*--------------------------------------------------------------*/
 
-
- .contact .email-form button[type="submit"] {
-    background-color: orange; /* Couleur unie */
+/* .contact .email-form button[type="submit"] {
+    background-color: orange; Couleur unie */
 /* color: white;
     border: 0;
     padding: 13px 50px;
     transition: 0.4s;
     border-radius: 4px;
     font-size: 16px;
-  }
+  }*/
 
-  .contact .email-form button[type="submit"]:hover {
-    background-color: darkorange; /* Couleur plus foncée au survol */
+/*.contact .email-form button[type="submit"]:hover { */
+/* background-color: darkorange; Couleur plus foncée au survol */
 /* color: white;
-  } */
-*/
-/* # Starter Section Section */
---------------------------------------------------------------*/
-.starter-section {
-  /* Add your styles here */
-}
+  }*/
+/*--------------------------------- # Starter Section Section */
+
+/* .starter-section { */
+/* Add your styles here */
 
 /*--------------------------------------------------------------
 # Widgets
@@ -2938,30 +2936,29 @@ body {
 /* .pricing-item {
   border: 2px solid transparent;
   transition: border-color 0.3s ease;
-}
+}*/
 
-.pricing-item:hover {
-  border-color: #ff6600; /* Couleur orange pour le survol */
-/* } */
+/* .pricing-item:hover {
+  border-color: #ff6600; Couleur orange pour le survol
+} */
 
 /* .pricing-item.selected {
-  border-color: #ff6600; /* Couleur orange pour l'élément sélectionné */
-/* } */
-*/
+  border-color: #ff6600; Couleur orange pour l'élément sélectionné */
+/* }*/
 
 /* .cta-btn {
-  background-color: #ff6600; /* Couleur de fond orange */
-  /* color: #fff; /* Couleur du texte blanc */
-  /* border: none; */
-  /* padding: 10px 20px; */ */
-  /* cursor: pointer; */
-  /* transition: background-color 0.3s ease, border-color 0.3s ease;
-} */ */
+  background-color: #ff6600; Couleur de fond orange
+  color: #fff; Couleur du texte blanc */
+/* border: none; */
+/* padding: 10px 20px; */
+/* cursor: pointer; */
+/* transition: background-color 0.3s ease, border-color 0.3s ease;
+}  */
 
-/* .cta-btn:hover {
-  background-color: #cc5200; /* Couleur de fond orange foncé au survol */
-  /* border-color: #cc5200; Couleur de bordure orange foncé au survol */
-/* } */ */ */
+/* .cta-btn:hover { */
+/* background-color: #cc5200; Couleur de fond orange foncé au survol */
+/* border-color: #cc5200; Couleur de bordure orange foncé au survol */
+/* } */
 /* Style de base pour les boutons */
 .cta-btn {
   display: inline-block;

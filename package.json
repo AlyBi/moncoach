@@ -52,6 +52,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@types/aos": "^3.0.7",
     "@types/bootstrap": "^5.2.10",
     "@types/react": "^18.3.12",
