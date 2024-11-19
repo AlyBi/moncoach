@@ -154,7 +154,7 @@ const Team = () => {
                                                 </div>
                                                 <div className="member-info">
                                                     <h4>Walter White</h4>
-                                                    <span>Chief Executive Officer</span>
+                                                    <span>Coach financier</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -172,7 +172,7 @@ const Team = () => {
                                                 </div>
                                                 <div className="member-info">
                                                     <h4>Sarah Jhonson</h4>
-                                                    <span>Product Manager</span>
+                                                    <span>Coach santé</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -190,7 +190,7 @@ const Team = () => {
                                                 </div>
                                                 <div className="member-info">
                                                     <h4>William Anderson</h4>
-                                                    <span>CTO</span>
+                                                    <span>Coach Sportif</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -207,8 +207,8 @@ const Team = () => {
                                                     </div>
                                                 </div>
                                                 <div className="member-info">
-                                                    <h4>Amanda Jepson</h4>
-                                                    <span>Accountant</span>
+                                                    <h4>Myriam Jepson</h4>
+                                                    <span>Coach bien être</span>
                                                 </div>
                                             </div>
                                         </div>
