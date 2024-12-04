@@ -9,7 +9,7 @@ const Footer: React.FC = () => (
                 <div className="col-lg-4 col-md-6 footer-about">
                     <a href="/" className="logo d-flex align-items-center">
                         {/* <img src={logo} alt="Logo" className="logo-img" /> */}
-                        <span className="sitename">life design coaching</span>
+                        <span className="sitename">EHD-CONSEIL</span>
                     </a>
                     <div className="footer-contact pt-3">
                         <p>27 Avenue de l'Opéra</p>
@@ -64,7 +64,7 @@ const Footer: React.FC = () => (
         </div>
 
         <div className="container copyright text-center mt-4">
-            <p>© <span>2024 Copyright</span> <strong className="px-1 sitename">LifeCoaching</strong> <span>Tous droits réservés</span></p>
+            <p>© <span>2024 Copyright</span> <strong className="px-1 sitename">EHD-CONSEIL</strong> <span>Tous droits réservés</span></p>
             <div className="credits">
                 Designed by
                 <a href="https://iya-tech-development.com/" target="_blank" rel="noopener noreferrer">

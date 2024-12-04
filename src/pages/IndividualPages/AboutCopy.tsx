@@ -52,14 +52,12 @@
 
 // export default About;
 import React, { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css'; // Importer les styles CSS d'AOS
-import bsl3 from '../assets/img/bsl3.jpg'; // Assurez-vous que le chemin est correct
 
-const About: React.FC = () => {
+const About = () => {
     useEffect(() => {
-        // Initialiser AOS (Animate On Scroll)
-        AOS.init();
+        // Exemple d'effet, par exemple pour initialiser une animation ou charger des données
+        const AOS = require('aos');
+        AOS.init(); // Initialise AOS (Animate On Scroll)
 
         // Optionnel: nettoyage si nécessaire
         return () => {
@@ -70,13 +68,24 @@ const About: React.FC = () => {
     return (
         <main className="main">
             {/* Page Title */}
+            <div className="page-title accent-background">
+                <div className="container d-lg-flex justify-content-between align-items-center">
+                    <h1 className="mb-2 mb-lg-0">À propos</h1>
+                    <nav className="breadcrumbs">
+                        <ol>
+                            <li><a href="/">Accueil</a></li>
+                            <li className="current">À propos</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
 
             {/* About Section */}
             <section id="about" className="about section">
                 <div className="container">
                     <div className="row position-relative">
                         <div className="col-lg-7 about-img" data-aos="zoom-out" data-aos-delay="200">
-                            <img src={bsl3} alt="About" />
+                            <img src="/assets/img/bsl3.jpg" alt="About" />
                         </div>
 
                         <div className="col-lg-7" data-aos="fade-up" data-aos-delay="100">

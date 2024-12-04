@@ -123,9 +123,9 @@
 import React, { useState, useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // Importer les styles CSS d'AOS
-import TestimonialsSimpl from './TestimonialsSimpl';
-import TeamSimpl from './TeamSimpl';
-import bsl3 from '../assets/img/bsl3.jpg'; // Assurez-vous que le chemin est correct
+import TestimonialsSimpl from './TestimonialsSimplCompany';
+import TeamSimpl from './TeamSimplCompany';
+import bsl3 from '../../assets/img/bsl3.jpg'; // Assurez-vous que le chemin est correct
 
 const About: React.FC = () => {
     const [loading, setLoading] = useState(true);

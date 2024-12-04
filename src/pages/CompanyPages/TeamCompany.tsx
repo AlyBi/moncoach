@@ -79,10 +79,10 @@
 
 // export default Team;
 import React, { useState, useEffect } from 'react';
-import teamImage1 from '../assets/img/team/team-1.jpg'; // Assurez-vous que le chemin est correct
-import teamImage2 from '../assets/img/team/team-2.jpg'; // Assurez-vous que le chemin est correct
-import teamImage3 from '../assets/img/team/team-3.jpg'; // Assurez-vous que le chemin est correct
-import teamImage4 from '../assets/img/team/team-4.jpg'; // Assurez-vous que le chemin est correct
+import teamImage1 from '../../assets/img/team/team-1.jpg'; // Assurez-vous que le chemin est correct
+import teamImage2 from '../../assets/img/team/team-2.jpg'; // Assurez-vous que le chemin est correct
+import teamImage3 from '../../assets/img/team/team-3.jpg'; // Assurez-vous que le chemin est correct
+import teamImage4 from '../../assets/img/team/team-4.jpg'; // Assurez-vous que le chemin est correct
 
 const Team = () => {
     const [loading, setLoading] = useState(true);

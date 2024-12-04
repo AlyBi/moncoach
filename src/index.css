@@ -2995,3 +2995,578 @@ body {
 .selected {
   border: 2px solid #f39c12; /* Optionnel : ajouter une bordure autour du plan sélectionné */
 }
+.modal-header .modal-title {
+  text-align: center;
+  width: 100%; /* Pour s'assurer que le titre occupe toute la largeur disponible */
+  margin: 0 auto; /* Centrer le titre */
+}
+/* Changer l'arrière-plan du modal-header en orange */
+.modal-header {
+  background-color: #ffa500; /* Couleur orange */
+  transition: background-color 0.3s ease; /* Transition douce lors du survol */
+}
+
+/* Changer l'arrière-plan en orange foncé lorsque le modal-header est survolé */
+.modal-header:hover {
+  background-color: #e68a00; /* Orange foncé */
+}
+
+/* Pour centrer le titre dans le modal-header */
+.modal-header .modal-title {
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+}
+/* Ajuster la hauteur de la modal pour éviter un débordement */
+.modal-dialog {
+  max-height: 90vh; /* La modal ne dépassera pas 90% de la hauteur de l'écran */
+  overflow-y: auto; /* Permet le défilement interne si nécessaire */
+}
+
+/* Optionnellement, ajuster le contenu de la modal */
+.modal-content {
+  height: 100%;
+}
+/* Supprimer le défilement vertical et faire en sorte que le calendrier prenne toute la hauteur */
+@media (max-width: 768px) {
+  /* Cibler les écrans mobiles */
+  .modal-dialog {
+    height: 100%; /* Utiliser toute la hauteur disponible */
+    margin: 0; /* Supprimer la marge par défaut */
+  }
+
+  .modal-content {
+    height: 100%; /* Remplir toute la hauteur disponible */
+    display: flex;
+    flex-direction: column; /* Alignement vertical */
+    padding: 0; /* Enlever le padding par défaut */
+  }
+
+  .modal-body {
+    flex-grow: 1; /* Laisser le corps de la modal prendre tout l'espace */
+    overflow-y: hidden; /* Supprimer la barre de défilement */
+  }
+
+  /* Assurez-vous que le calendrier prenne toute la hauteur du body de la modal */
+  .calendly-container iframe {
+    height: 100% !important; /* Forcer le calendrier à occuper toute la hauteur disponible */
+    width: 100% !important; /* Assurer que le calendrier occupe toute la largeur */
+  }
+}
+/* Style du bouton Calendly */
+.navbar-calendly-button {
+  background-color: #000000; /* Couleur orange */
+  color: white; /* Couleur du texte en blanc */
+  border: none; /* Pas de bordure par défaut */
+  padding: 10px 20px; /* Padding pour donner du confort autour du texte */
+  font-size: 16px; /* Taille du texte */
+  border-radius: 25px; /* Bordure arrondie */
+  cursor: pointer; /* Pointeur de souris en forme de main */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Transition douce pour le hover */
+  margin-right: 10px; /* Marge à droite pour l'espacement */
+}
+@media (max-width: 768px) {
+  .navbar-calendly-button {
+    padding: 1px 1px; /* Réduire le padding sur les petits écrans */
+    font-size: 14px; /* Réduire la taille du texte sur les petits écrans */
+  }
+}
+/* Effet au survol du bouton */
+.navbar-calendly-button:hover {
+  background-color: #e68a00; /* Orange foncé au survol */
+  transform: scale(1.05); /* Légère augmentation de la taille du bouton */
+}
+/* Lorsque le sous-menu 'À propos' est ouvert */
+/* .open-link { */
+/* color: #ff6f00; Orange foncé */
+/* } */
+
+/* Lorsque le chevron est tourné (ouvert) */
+.rotate-chevron {
+  transform: rotate(180deg); /* Fait pivoter la flèche de 180° */
+}
+
+/* Effet d'activation du sous-menu */
+.dropdown-active {
+  display: block; /* Affiche les sous-menus */
+}
+
+/* Style pour le texte des sous-menus */
+.dropdown > ul {
+  display: none; /* Cache les sous-menus par défaut */
+}
+
+/* Lorsqu'on clique sur le bouton (ouverture du sous-menu) */
+.open-button {
+  color: #ff6f00; /*Orange foncé*/
+}
+
+/* Lorsque le chevron est tourné (ouvert) */
+.rotate-chevron {
+  transform: rotate(180deg); /* Fait pivoter la flèche de 180° */
+  color: #ff6f00; /* Orange foncé */
+}
+
+/* Effet d'activation du sous-menu */
+.dropdown-active {
+  display: block; /* Affiche les sous-menus */
+}
+
+/* Style pour le texte des sous-menus */
+.dropdown > ul {
+  display: none; /* Cache les sous-menus par défaut */
+}
+/* Navbar.css */
+.navbar-calendly-button {
+  background-color: #ff6a00;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.navbar-calendly-button:hover {
+  background-color: #e65a00; /* Couleur plus foncée au survol */
+}
+
+.navbar-calendly-button:focus {
+  outline: none; /* Retirer le contour lors du focus */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre légère au focus */
+}
+
+.calendly-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #ff6a00; /* Couleur du titre */
+}
+
+iframe {
+  width: 100%;
+  height: 500px; /* Ajustez cette taille selon vos besoins */
+  border: none;
+  border-radius: 10px;
+}
+
+/* Ajustement pour les petits écrans (mobiles et tablettes) */
+@media (max-width: 768px) {
+  iframe {
+    height: calc(
+      100vh - 60px
+    ); /* Ajuster la hauteur pour éviter que le contenu ne touche pas le bas de l'écran */
+  }
+
+  .dropdown.open .toggle-dropdown {
+    background-color: #e65a00; /* Couleur orange foncé lorsque le sous-menu est ouvert */
+  }
+}
+/* Navbar.css */
+.navbar-calendly-button {
+  background-color: #ff6a00;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.navbar-calendly-button:hover {
+  background-color: #e65a00; /* Couleur plus foncée au survol */
+}
+
+.navbar-calendly-button:focus {
+  outline: none; /* Retirer le contour lors du focus */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre légère au focus */
+}
+
+.calendly-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #ff6a00; /* Couleur du titre */
+}
+
+iframe {
+  width: 100%;
+  height: 500px; /* Ajustez cette taille selon vos besoins */
+  border: none;
+  border-radius: 10px;
+}
+
+/* Ajustement pour les petits écrans (mobiles et tablettes) */
+@media (max-width: 768px) {
+  iframe {
+    height: calc(
+      100vh - 60px
+    ); /* Ajuster la hauteur pour éviter que le contenu ne touche pas le bas de l'écran */
+  }
+
+  .dropdown.open .toggle-dropdown {
+    background-color: orange; /* Couleur orange foncé lorsque le sous-menu est ouvert */
+  }
+}
+
+/* Contexte général pour l'overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  transform: translateY(-100%); /* Commence hors de l'écran */
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Animation de l'overlay - Rideau */
+.overlay.show {
+  transform: translateY(0);
+  animation: slideDown 0.6s forwards;
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Style des boutons */
+.overlay .button-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* Effet de fond avec des couleurs dynamiques */
+.overlay.show {
+  background: linear-gradient(to right, #ff7b7b, #ffb84d, #4db8ff, #ff66b3);
+  background-size: 400% 400%;
+  animation: rideauEffect 4s ease infinite;
+}
+
+@keyframes rideauEffect {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Animation des images flottantes autour de l'overlay */
+.overlay .floating-images {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none; /* Empêche les interactions avec les images */
+  z-index: -1; /* En-dessous du contenu principal */
+}
+
+.overlay .floating-images img {
+  position: absolute;
+  animation: floatImages 6s ease-in-out infinite;
+  opacity: 0.5;
+  filter: blur(1px);
+}
+
+/* Effet de mouvement pour les images flottantes */
+@keyframes floatImages {
+  0% {
+    transform: translate(0, -20px);
+    opacity: 0.5;
+  }
+  25% {
+    transform: translate(50px, 20px);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(100px, 0);
+    opacity: 0.7;
+  }
+  75% {
+    transform: translate(50px, -20px);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, 20px);
+    opacity: 0.5;
+  }
+}
+/* Ajoutons un conteneur pour les boutons */
+.overlay button-container {
+  display: flex; /* Utiliser Flexbox pour aligner horizontalement */
+  justify-content: center; /* Centrer les boutons horizontalement */
+  gap: 20px; /* Espacement entre les boutons */
+  margin-top: 20px; /* Ajoutons un peu de marge au-dessus des boutons */
+  /* Coins arrondis pour un look plus moderne */
+}
+
+/* Style des boutons */
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #333;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 20px !important; /* Coins arrondis pour un look plus moderne */
+}
+
+button:hover {
+  background-color: #8e9ae3;
+}
+
+/*
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+/* color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center; */
+/* z-index: 9999; Assurez-vous que l'overlay est au-dessus de tout */
+/* transition: opacity 0.3s ease-in-out;
+} */
+/* 
+.overlay h1 {
+  margin-bottom: 20px;
+}
+
+.overlay button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.overlay button:hover {
+  background-color: #0056b3;
+} */
+/* Contexte général pour l'overlay */
+/* .overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden; */
+/* transform: translateY(-100%); Commence hors de l'écran
+  transition: transform 0.5s ease-in-out;
+} */
+
+/* Animation de l'overlay - Rideau */
+/* .overlay.show {
+  transform: translateY(0);
+  animation: slideDown 0.6s forwards;
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+} */
+
+/* Style des boutons */
+/* .overlay .button-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+} */
+
+/* Effet de fond avec des couleurs dynamiques */
+/* .overlay.show {
+  background: linear-gradient(to right, #ff7b7b, #ffb84d, #4db8ff, #ff66b3);
+  background-size: 400% 400%;
+  animation: rideauEffect 4s ease infinite;
+} */
+
+/* @keyframes rideauEffect {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+} */
+
+/* Conteneur des images flottantes sous forme de cartes */
+/* .overlay .floating-images {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; */
+/* pointer-events: none; Empêche les interactions avec les images */
+/* z-index: -1; En-dessous du contenu principal
+} */
+/* 
+.overlay .floating-images .card {
+  position: absolute;
+  width: 120px;
+  height: 160px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  opacity: 0.8;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+} */
+
+/* Animation des cartes - mouvement latéral et léger zoom */
+/* .overlay .floating-images .card:hover {
+  transform: translateY(-10px) scale(1.05);
+  opacity: 1;
+} */
+
+/* .overlay .floating-images .card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+} */
+
+/* Positionnement spécifique des cartes sur les côtés avec animation */
+/* .overlay .floating-images .card:nth-child(1) {
+  top: 10%;
+  left: 5%;
+  animation: floatCard1 5s ease-in-out infinite;
+}
+
+.overlay .floating-images .card:nth-child(2) {
+  top: 30%;
+  right: 5%;
+  animation: floatCard2 5s ease-in-out infinite;
+}
+
+.overlay .floating-images .card:nth-child(3) {
+  bottom: 10%;
+  left: 40%;
+  animation: floatCard3 5s ease-in-out infinite;
+} */
+
+/* Animations des cartes pour un mouvement léger */
+/* @keyframes floatCard1 {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  25% {
+    transform: translateX(-20px) translateY(20px);
+  }
+  50% {
+    transform: translateX(0) translateY(0);
+  }
+  75% {
+    transform: translateX(20px) translateY(-20px);
+  }
+  100% {
+    transform: translateX(0) translateY(0);
+  }
+}
+
+@keyframes floatCard2 {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  25% {
+    transform: translateX(20px) translateY(-20px);
+  }
+  50% {
+    transform: translateX(0) translateY(0);
+  }
+  75% {
+    transform: translateX(-20px) translateY(20px);
+  }
+  100% {
+    transform: translateX(0) translateY(0);
+  }
+}
+
+@keyframes floatCard3 {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  25% {
+    transform: translateX(-20px) translateY(-20px);
+  }
+  50% {
+    transform: translateX(0) translateY(0);
+  }
+  75% {
+    transform: translateX(20px) translateY(20px);
+  }
+  100% {
+    transform: translateX(0) translateY(0);
+  }
+} */
+
+/* Style des boutons */
+/* button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #fff;
+  color: #333;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 4px; /* Coins arrondis */
+/* }
+
+button:hover {
+  background-color: #ccc;
+} */

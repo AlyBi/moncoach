@@ -1,8 +1,8 @@
 
 
 import React from 'react';
-import blogImage1 from '../assets/img/blog/blog-5.jpg'; // Assurez-vous que le chemin est correct
-import blogImage2 from '../assets/img/blog/blog-6.jpg'; // Assurez-vous que le chemin est correct
+import blogImage1 from '../../assets/img/blog/blog-5.jpg'; // Assurez-vous que le chemin est correct
+import blogImage2 from '../../assets/img/blog/blog-6.jpg'; // Assurez-vous que le chemin est correct
 
 const Blog = () => (
     <main className="main">

@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Glightbox from 'glightbox';
 import 'glightbox/dist/css/glightbox.min.css';
-import masonryPortfolio1 from '../assets/img/masonry-portfolio/masonry-portfolio-1.jpg'; // Assurez-vous que le chemin est correct
-import masonryPortfolio2 from '../assets/img/masonry-portfolio/masonry-portfolio-2.jpg'; // Assurez-vous que le chemin est correct
-import masonryPortfolio3 from '../assets/img/masonry-portfolio/masonry-portfolio-3.jpg'; // Assurez-vous que le chemin est correct
+import masonryPortfolio1 from '../../assets/img/masonry-portfolio/masonry-portfolio-1.jpg'; // Assurez-vous que le chemin est correct
+import masonryPortfolio2 from '../../assets/img/masonry-portfolio/masonry-portfolio-2.jpg'; // Assurez-vous que le chemin est correct
+import masonryPortfolio3 from '../../assets/img/masonry-portfolio/masonry-portfolio-3.jpg'; // Assurez-vous que le chemin est correct
 
 const PortfolioDetails = () => {
     const [activeFilter, setActiveFilter] = useState('*');

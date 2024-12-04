@@ -62,10 +62,10 @@
 
 // export default Team;
 import React, { useState, useEffect } from 'react';
-import teamImage1 from '../assets/img/team/team-1.jpg'; // Assurez-vous que le chemin est correct
-import teamImage2 from '../assets/img/team/team-2.jpg'; // Assurez-vous que le chemin est correct
+import teamImage1 from '../../assets/img/team/team-1.jpg'; // Assurez-vous que le chemin est correct
+import teamImage2 from '../../assets/img/team/team-2.jpg'; // Assurez-vous que le chemin est correct
 
-const Team = () => {
+const TeamSimpl = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -168,4 +168,4 @@ const Team = () => {
     );
 };
 
-export default Team;
+export default TeamSimpl;

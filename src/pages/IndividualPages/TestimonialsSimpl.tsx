@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 
 // Import des images
-import img1 from '../assets/img/testimonials/testimonials-1.jpg';
-import img2 from '../assets/img/testimonials/testimonials-2.jpg';
-import img3 from '../assets/img/testimonials/testimonials-3.jpg';
-import img4 from '../assets/img/testimonials/testimonials-4.jpg';
-import img5 from '../assets/img/testimonials/testimonials-5.jpg';
-import img6 from '../assets/img/testimonials/testimonials-6.jpg';
+import img1 from '../../assets/img/testimonials/testimonials-1.jpg';
+import img2 from '../../assets/img/testimonials/testimonials-2.jpg';
+import img3 from '../../assets/img/testimonials/testimonials-3.jpg';
+import img4 from '../../assets/img/testimonials/testimonials-4.jpg';
+import img5 from '../../assets/img/testimonials/testimonials-5.jpg';
+import img6 from '../../assets/img/testimonials/testimonials-6.jpg';
 
-const Testimonials = () => {
+const TestimonialsSimpl = () => {
     interface Testimonial {
         id: number;
         name: string;
@@ -65,4 +65,4 @@ const Testimonials = () => {
     );
 };
 
-export default Testimonials;
+export default TestimonialsSimpl;

@@ -162,10 +162,10 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Glightbox from "glightbox";
 import "glightbox/dist/css/glightbox.min.css";
-import portfolioImage1 from "../assets/img/masonry-portfolio/masonry-portfolio-1.jpg"; // Assurez-vous que le chemin est correct
-import portfolioImage2 from "../assets/img/masonry-portfolio/masonry-portfolio-2.jpg"; // Assurez-vous que le chemin est correct
-import portfolioImage3 from "../assets/img/masonry-portfolio/masonry-portfolio-3.jpg"; // Assurez-vous que le chemin est correct
-import portfolioImage4 from "../assets/img/masonry-portfolio/masonry-portfolio-4.jpg"; // Assurez-vous que le chemin est correct
+import portfolioImage1 from "../../assets/img/masonry-portfolio/masonry-portfolio-1.jpg"; // Assurez-vous que le chemin est correct
+import portfolioImage2 from "../../assets/img/masonry-portfolio/masonry-portfolio-2.jpg"; // Assurez-vous que le chemin est correct
+import portfolioImage3 from "../../assets/img/masonry-portfolio/masonry-portfolio-3.jpg"; // Assurez-vous que le chemin est correct
+import portfolioImage4 from "../../assets/img/masonry-portfolio/masonry-portfolio-4.jpg"; // Assurez-vous que le chemin est correct
 const Portfolio = () => {
     const [activeFilter, setActiveFilter] = useState("*"); // Déclare un état pour le filtre actif
     const [loading, setLoading] = useState(true); // État de chargement
