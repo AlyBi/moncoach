@@ -1,12 +1,14 @@
 {
   "files": {
-    "main.css": "/moncoach/static/css/main.59327ef8.css",
-    "main.js": "/moncoach/static/js/main.50d79ff7.js",
+    "main.css": "/moncoach/static/css/main.daa7dcd6.css",
+    "main.js": "/moncoach/static/js/main.79a14666.js",
     "static/js/453.a12bb62e.chunk.js": "/moncoach/static/js/453.a12bb62e.chunk.js",
     "static/media/home2.jpg": "/moncoach/static/media/home2.3cca874e57db3706e4d1.jpg",
+    "static/media/home5.jpg": "/moncoach/static/media/home5.410cfcd439fa8294c438.jpg",
+    "static/media/home6.jpg": "/moncoach/static/media/home6.2da68cfa0bc7a914d1b8.jpg",
+    "static/media/coach.jpg": "/moncoach/static/media/coach.b29f453f2f4a59318c7d.jpg",
     "static/media/ado.jpg": "/moncoach/static/media/ado.650299944d16232ab779.jpg",
     "static/media/bsl3.jpg": "/moncoach/static/media/bsl3.1f21bdbd0206f629dbed.jpg",
-    "static/media/home3.jpg": "/moncoach/static/media/home3.9bf79b62bf8b60914876.jpg",
     "static/media/logo5.jpg": "/moncoach/static/media/logo5.3118390692231cafa6ac.jpg",
     "static/media/bootstrap-icons.woff?": "/moncoach/static/media/bootstrap-icons.39795c0b4513de014cf8.woff",
     "static/media/masonry-portfolio-2.jpg": "/moncoach/static/media/masonry-portfolio-2.c082025dddeb09057e14.jpg",
@@ -16,10 +18,8 @@
     "static/media/blog-6.jpg": "/moncoach/static/media/blog-6.485fda565b0a66390161.jpg",
     "static/media/team-1.jpg": "/moncoach/static/media/team-1.e72588685d166273de61.jpg",
     "static/media/testimonials-2.jpg": "/moncoach/static/media/testimonials-2.4b41e5c09698f7f4f9f9.jpg",
-    "static/media/team-4.jpg": "/moncoach/static/media/team-4.02279f8b2eb608d9663e.jpg",
     "static/media/testimonials-1.jpg": "/moncoach/static/media/testimonials-1.54f2a70e2804cdf6f09d.jpg",
     "static/media/team-2.jpg": "/moncoach/static/media/team-2.9f41685ac49ea7bf87ae.jpg",
-    "static/media/team-3.jpg": "/moncoach/static/media/team-3.bdc75f5ae516bc88c91f.jpg",
     "static/media/masonry-portfolio-1.jpg": "/moncoach/static/media/masonry-portfolio-1.f8a4f20b1b6d6ee85702.jpg",
     "static/media/testimonials-6.jpg": "/moncoach/static/media/testimonials-6.87ecc4beb65c98b4ae67.jpg",
     "static/media/testimonials-5.jpg": "/moncoach/static/media/testimonials-5.8732aa377888dc5873fb.jpg",
@@ -28,12 +28,12 @@
     "static/media/masonry-portfolio-4.jpg": "/moncoach/static/media/masonry-portfolio-4.ab6a84ccac895007e9c3.jpg",
     "static/media/testimonials-3.jpg": "/moncoach/static/media/testimonials-3.bec51ce16f238c7ec7b1.jpg",
     "index.html": "/moncoach/index.html",
-    "main.59327ef8.css.map": "/moncoach/static/css/main.59327ef8.css.map",
-    "main.50d79ff7.js.map": "/moncoach/static/js/main.50d79ff7.js.map",
+    "main.daa7dcd6.css.map": "/moncoach/static/css/main.daa7dcd6.css.map",
+    "main.79a14666.js.map": "/moncoach/static/js/main.79a14666.js.map",
     "453.a12bb62e.chunk.js.map": "/moncoach/static/js/453.a12bb62e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.59327ef8.css",
-    "static/js/main.50d79ff7.js"
+    "static/css/main.daa7dcd6.css",
+    "static/js/main.79a14666.js"
   ]
 }
