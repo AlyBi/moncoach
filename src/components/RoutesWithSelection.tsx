@@ -5,7 +5,8 @@ import { useNavigate } from 'react-router-dom';
 // Pages pour particuliers
 import Home from '../pages/IndividualPages/Home';
 import About from '../pages/IndividualPages/About';
-import ServicesHome from '../pages/IndividualPages/ServicesHome';
+import PrestationsHome from '../pages/IndividualPages/PrestationsHome';
+import Prestations from '../pages/IndividualPages/Prestations';
 import Portfolio from '../pages/IndividualPages/Portfolio';
 import Pricing from '../pages/IndividualPages/Pricing';
 import Blog from '../pages/IndividualPages/Blog';
@@ -88,7 +89,8 @@ const RoutesWithSelection = () => {
             <>
                 <Route path="/individual" element={<Home />} />
                 <Route path="/individual/about" element={<About />} />
-                <Route path="/individual/services" element={<ServicesHome />} />
+                <Route path="/individual/prestations" element={<PrestationsHome />} />
+                <Route path="/individual/prestations" element={<Prestations />} />
                 <Route path="/individual/portfolio" element={<Portfolio />} />
                 <Route path="/individual/pricing" element={<Pricing />} />
                 <Route path="/individual/blog" element={<Blog />} />

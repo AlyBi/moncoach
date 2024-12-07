@@ -4,8 +4,8 @@ import home2 from '../../assets/img/home2.jpg'; // Assurez-vous que le chemin es
 import ado from '../../assets/img/ado.jpg'; // Assurez-vous que le chemin est correct
 import home5 from '../../assets/img/home5.jpg'; // Assurez-vous que le chemin est correct
 import home6 from '../../assets/img/home6.jpg';
-// import About from './AboutSimpl';
-import Services from './ServicesHome';
+import About from './AboutSimpl';
+import Prestations from './PrestationsHome';
 import Portfolio from './PortfolioDetails';
 // import FloatingCalendlyButton from './FloatingCalendlyButton';
 
@@ -73,8 +73,8 @@ const Home: React.FC = () => {
                     </ol>
                 </div>
             </section>
-            {/* <About /> */}
-            <Services />
+            <About />
+            <Prestations />
             <Portfolio />
             {/* <InlineWidget url="https://calendly.com/definir/prise-de-rendez-vous?" /> */}
             {/* <FloatingCalendlyButton /> */}

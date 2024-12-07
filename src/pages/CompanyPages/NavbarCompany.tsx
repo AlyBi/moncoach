@@ -245,7 +245,7 @@ const NavbarCompany: React.FC = () => {
             <div className="container position-relative d-flex align-items-center">
                 <NavLink to={userType === 'company' ? "/company" : "/individual"} className="logo d-flex align-items-center me-auto" onClick={closeMenu}>
                     <img src={logo} alt="Logo" className="logo-img" />
-                    <h1 className="sitename">EHD-CONSEIL</h1>
+                    <h1 className="sitename">EHD CONSEIL</h1>
                 </NavLink>
                 <nav id="navmenu" className={`navmenu ${isMenuOpen ? 'active' : ''}`}>
                     <ul>

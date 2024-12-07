@@ -149,7 +149,7 @@ import NavbarIndividual from './pages/IndividualPages/NavbarIndividual'; // Navb
 import NavbarCompany from './pages/CompanyPages/NavbarCompany'; // Navbar pour entreprises
 import './index.css';
 import Home from './pages/IndividualPages/Home';
-import ServicesHome from './pages/IndividualPages/ServicesHome';
+import PrestationsHome from './pages/IndividualPages/PrestationsHome';
 import Portfolio from './pages/IndividualPages/Portfolio';
 import HomeCompany from './pages/CompanyPages/HomeCompany';
 import ServicesHomeCompany from './pages/CompanyPages/ServicesHomeCompany';
@@ -219,7 +219,7 @@ const App: React.FC = () => {
           {/* Routes Particulier */}
           <Route path="/individual" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/services" element={<ServicesHome />} />
+          <Route path="/prestations" element={<PrestationsHome />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/blog" element={<Blog />} />

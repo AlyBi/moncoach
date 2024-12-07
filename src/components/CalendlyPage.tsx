@@ -6,7 +6,7 @@ const CalendlyPage: React.FC = () => {
     return (
         <div className="calendly-container">
             <a href="https://calendly.com/definir/prise-de-rendez-vous?" className="calendly-button" target="_blank" rel="noopener noreferrer">
-                Prendre un rendez-vous
+                Prise de rendez-vous
             </a>
             <InlineWidget url="https://calendly.com/definir/prise-de-rendez-vous?" />
         </div>
