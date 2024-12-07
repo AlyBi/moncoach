@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/moncoach/static/css/main.daa7dcd6.css",
-    "main.js": "/moncoach/static/js/main.79a14666.js",
+    "main.css": "/moncoach/static/css/main.b6f43245.css",
+    "main.js": "/moncoach/static/js/main.15feed9b.js",
     "static/js/453.a12bb62e.chunk.js": "/moncoach/static/js/453.a12bb62e.chunk.js",
     "static/media/home2.jpg": "/moncoach/static/media/home2.3cca874e57db3706e4d1.jpg",
     "static/media/home5.jpg": "/moncoach/static/media/home5.410cfcd439fa8294c438.jpg",
@@ -15,10 +15,12 @@
     "static/media/bootstrap-icons.woff2?": "/moncoach/static/media/bootstrap-icons.b7bcc075b395c14ce8c2.woff2",
     "static/media/blog-5.jpg": "/moncoach/static/media/blog-5.ecc0eaf3938b305cb857.jpg",
     "static/media/logo6.png": "/moncoach/static/media/logo6.403181523bca7942a177.png",
+    "static/media/13.jpg": "/moncoach/static/media/13.4499bf3ce49b315b0ff5.jpg",
     "static/media/blog-6.jpg": "/moncoach/static/media/blog-6.485fda565b0a66390161.jpg",
     "static/media/team-1.jpg": "/moncoach/static/media/team-1.e72588685d166273de61.jpg",
     "static/media/testimonials-2.jpg": "/moncoach/static/media/testimonials-2.4b41e5c09698f7f4f9f9.jpg",
     "static/media/testimonials-1.jpg": "/moncoach/static/media/testimonials-1.54f2a70e2804cdf6f09d.jpg",
+    "static/media/12.jpg": "/moncoach/static/media/12.366be473987e6bdaca98.jpg",
     "static/media/team-2.jpg": "/moncoach/static/media/team-2.9f41685ac49ea7bf87ae.jpg",
     "static/media/masonry-portfolio-1.jpg": "/moncoach/static/media/masonry-portfolio-1.f8a4f20b1b6d6ee85702.jpg",
     "static/media/testimonials-6.jpg": "/moncoach/static/media/testimonials-6.87ecc4beb65c98b4ae67.jpg",
@@ -27,13 +29,14 @@
     "static/media/masonry-portfolio-3.jpg": "/moncoach/static/media/masonry-portfolio-3.fc9e27e7017aebbcbf06.jpg",
     "static/media/masonry-portfolio-4.jpg": "/moncoach/static/media/masonry-portfolio-4.ab6a84ccac895007e9c3.jpg",
     "static/media/testimonials-3.jpg": "/moncoach/static/media/testimonials-3.bec51ce16f238c7ec7b1.jpg",
+    "static/media/11.jpg": "/moncoach/static/media/11.c2601a6145c142a52850.jpg",
     "index.html": "/moncoach/index.html",
-    "main.daa7dcd6.css.map": "/moncoach/static/css/main.daa7dcd6.css.map",
-    "main.79a14666.js.map": "/moncoach/static/js/main.79a14666.js.map",
+    "main.b6f43245.css.map": "/moncoach/static/css/main.b6f43245.css.map",
+    "main.15feed9b.js.map": "/moncoach/static/js/main.15feed9b.js.map",
     "453.a12bb62e.chunk.js.map": "/moncoach/static/js/453.a12bb62e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.daa7dcd6.css",
-    "static/js/main.79a14666.js"
+    "static/css/main.b6f43245.css",
+    "static/js/main.15feed9b.js"
   ]
 }
