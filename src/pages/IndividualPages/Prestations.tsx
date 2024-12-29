@@ -207,6 +207,7 @@
 
 // export default Services;
 import React, { useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // Assure-toi d'importer les styles AOS
 
@@ -232,7 +233,9 @@ const Prestations: React.FC = () => {
                     <h1 className="mb-2 mb-lg-0">Prestations</h1>
                     <nav className="breadcrumbs">
                         <ol>
-                            <li><a href="/">Accueil</a></li>
+                            <li>
+                                <NavLink to="index.html">Accueil</NavLink>
+                            </li>
                             <li className="current">Prestations</li>
                         </ol>
                     </nav>

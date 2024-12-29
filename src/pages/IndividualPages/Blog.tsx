@@ -3,6 +3,7 @@
 import React from 'react';
 import blogImage1 from '../../assets/img/blog/blog-5.jpg'; // Assurez-vous que le chemin est correct
 import blogImage2 from '../../assets/img/blog/blog-6.jpg'; // Assurez-vous que le chemin est correct
+import { NavLink } from 'react-router-dom';
 
 const Blog = () => (
     <main className="main">
@@ -12,7 +13,9 @@ const Blog = () => (
                 <h1 className="mb-2 mb-lg-0">Blog</h1>
                 <nav className="breadcrumbs">
                     <ol>
-                        <li><a href="/">Accueil</a></li>
+                        <li>
+                            <NavLink to="index.html">Accueil</NavLink>
+                        </li>
                         <li className="current">Blog</li>
                     </ol>
                 </nav>

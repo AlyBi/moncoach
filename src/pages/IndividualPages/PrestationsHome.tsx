@@ -196,151 +196,428 @@
 
 // Assure-toi que ce fichier CSS est bien inclus pour l'effet de rotation
 
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import devPersonnelImg from '../../assets/img/11.jpg';
-import coachingInnovationImg from '../../assets/img/12.jpg';
-import strategieEntrepriseImg from '../../assets/img/13.jpg';
-import equilibreVieImg from '../../assets/img/11.jpg';
-import leadershipEquipeImg from '../../assets/img/12.jpg';
-import accompagnementAdosImg from '../../assets/img/13.jpg';
+// import React, { useState, useEffect } from 'react';
+// import { Link, useLocation } from 'react-router-dom';
+// import formationImg from '../../assets/img/gestion-emotion/gestion-emotion4.jpg';
+// import accompagnementImg from '../../assets/img/parentalité/parentalité (2).jpg';
+// // import developpementImg from '../../assets/img/comefficacité/coefficacité (6).jpg';
+// import projetFamilialImg from '../../assets/img/comefficacité/coefficacité (6).jpg';
+// import coachingImg from '../../assets/img/comefficacité/coefficacité (6).jpg';
+// import svstImg from '../../assets/img/comefficacité/coefficacité (6).jpg';
+// import organisationFamilialeImg from '../../assets/img/comefficacité/coefficacité (6).jpg';
+
+// const Services = () => {
+//     const location = useLocation();
+//     const [flippedCards, setFlippedCards] = useState<{ [key: number]: boolean }>({});
+//     const [isMobile, setIsMobile] = useState(false);
+
+//     // Détecter la taille de l'écran pour adapter l'affichage sur mobile
+//     useEffect(() => {
+//         const handleResize = () => {
+//             setIsMobile(window.innerWidth <= 768);  // Si l'écran est plus petit que 768px
+//         };
+//         handleResize(); // Vérification initiale
+//         window.addEventListener('resize', handleResize);
+
+//         return () => {
+//             window.removeEventListener('resize', handleResize);
+//         };
+//     }, []);
+
+//     useEffect(() => {
+//         // Vérifier si l'URL contient une ancre (hash)
+//         if (location.hash) {
+//             const element = document.querySelector(location.hash);
+//             if (element) {
+//                 element.scrollIntoView({ behavior: 'smooth' });
+//             }
+//         }
+//     }, [location]);
+
+//     const handleFlip = (index: number) => {
+//         setFlippedCards((prev) => ({
+//             ...prev,
+//             [index]: !prev[index],
+//         }));
+//     };
+
+//     return (
+//         <main className="main">
+//             {/* Page Title */}
+//             <div className="page-title accent-background">
+//                 <div className="container d-lg-flex justify-content-between align-items-center">
+//                     <h1 className="mb-2 mb-lg-0">Nos Services</h1>
+//                     <nav className="breadcrumbs">
+//                         <ol>
+//                             <li><Link to="/">Accueil</Link></li>
+//                             <li className="current">Services</li>
+//                         </ol>
+//                     </nav>
+//                 </div>
+//             </div>
+
+//             {/* Formation Section */}
+//             <section id="formation" className="services section light-background">
+//                 <div className="container">
+//                     <h2>Formation</h2>
+//                     <div className="row gy-4">
+//                         {[formationImg, formationImg, formationImg].map((img, index) => (
+//                             <div className={`col-lg-4 col-md-6`} key={index}>
+//                                 <div className="service-item position-relative">
+//                                     <div className="card-wrapper">
+//                                         <div className={`flip-card ${flippedCards[index] ? 'flipped' : ''}`}>
+//                                             <div className="flip-card-inner">
+//                                                 <div className="flip-card-front">
+//                                                     <div className="card-image-container">
+//                                                         <img src={img} alt={`Formation ${index}`} className="card-img-top" />
+//                                                         <div className="overlay-text">
+//                                                             <h3>Formation {index + 1}</h3>
+//                                                         </div>
+//                                                     </div>
+//                                                 </div>
+//                                                 <div className="flip-card-back">
+//                                                     <div className="card-content">
+//                                                         <h3>Formation {index + 1}</h3>
+//                                                         <p>Description de la formation.</p>
+//                                                         <Link to="/formation-details" className="btn btn-primary">Détails</Link>
+//                                                     </div>
+//                                                 </div>
+//                                             </div>
+//                                         </div>
+//                                     </div>
+
+//                                     {isMobile && !flippedCards[index] && (
+//                                         <button
+//                                             className="btn-en-savoir-plus"
+//                                             onClick={() => handleFlip(index)}
+//                                         >
+//                                             En savoir plus
+//                                         </button>
+//                                     )}
+//                                 </div>
+//                             </div>
+//                         ))}
+//                     </div>
+//                 </div>
+//             </section>
+
+//             {/* Accompagnement personnalisé Section */}
+//             <section id="accompagnement-personnalise" className="services section light-background">
+//                 <div className="container">
+//                     <h2>Accompagnement personnalisé</h2>
+//                     <div className="row gy-4">
+//                         {[accompagnementImg, accompagnementImg, accompagnementImg].map((img, index) => (
+//                             <div className={`col-lg-4 col-md-6`} key={index}>
+//                                 <div className="service-item position-relative">
+//                                     <div className="card-wrapper">
+//                                         <div className={`flip-card ${flippedCards[index + 3] ? 'flipped' : ''}`}>
+//                                             <div className="flip-card-inner">
+//                                                 <div className="flip-card-front">
+//                                                     <div className="card-image-container">
+//                                                         <img src={img} alt={`Accompagnement ${index}`} className="card-img-top" />
+//                                                         <div className="overlay-text">
+//                                                             <h3>Accompagnement {index + 1}</h3>
+//                                                         </div>
+//                                                     </div>
+//                                                 </div>
+//                                                 <div className="flip-card-back">
+//                                                     <div className="card-content">
+//                                                         <h3>Accompagnement {index + 1}</h3>
+//                                                         <p>Description de l'accompagnement.</p>
+//                                                         <Link to="/accompagnement-details" className="btn btn-primary">Détails</Link>
+//                                                     </div>
+//                                                 </div>
+//                                             </div>
+//                                         </div>
+//                                     </div>
+
+//                                     {isMobile && !flippedCards[index + 3] && (
+//                                         <button
+//                                             className="btn-en-savoir-plus"
+//                                             onClick={() => handleFlip(index + 3)}
+//                                         >
+//                                             En savoir plus
+//                                         </button>
+//                                     )}
+//                                 </div>
+//                             </div>
+//                         ))}
+//                     </div>
+//                 </div>
+//             </section>
+
+//             {/* Développement personnel et professionnel Section
+//             <section id="developpement" className="services section light-background">
+//                 <div className="container">
+//                     <h2>Développement personnel et professionnel</h2>
+//                     <div className="row gy-4">
+//                         {[developpementImg, developpementImg, developpementImg].map((img, index) => (
+//                             <div className={`col-lg-4 col-md-6`} key={index}>
+//                                 <div className="service-item position-relative">
+//                                     <div className="card-wrapper">
+//                                         <div className={`flip-card ${flippedCards[index + 6] ? 'flipped' : ''}`}>
+//                                             <div className="flip-card-inner">
+//                                                 <div className="flip-card-front">
+//                                                     <div className="card-image-container">
+//                                                         <img src={img} alt={`Développement ${index}`} className="card-img-top" />
+//                                                         <div className="overlay-text">
+//                                                             <h3>Développement {index + 1}</h3>
+//                                                         </div>
+//                                                     </div>
+//                                                 </div>
+//                                                 <div className="flip-card-back">
+//                                                     <div className="card-content">
+//                                                         <h3>Développement {index + 1}</h3>
+//                                                         <p>Description du développement.</p>
+//                                                         <Link to="/developpement-details" className="btn btn-primary">Détails</Link>
+//                                                     </div>
+//                                                 </div>
+//                                             </div>
+//                                         </div>
+//                                     </div>
+
+//                                     {isMobile && !flippedCards[index + 6] && (
+//                                         <button
+//                                             className="btn-en-savoir-plus"
+//                                             onClick={() => handleFlip(index + 6)}
+//                                         >
+//                                             En savoir plus
+//                                         </button>
+//                                     )}
+//                                 </div>
+//                             </div>
+//                         ))}
+//                     </div>
+//                 </div>
+//             </section> */}
+
+//             {/* Parcours d’accompagnement Section */}
+//             <section id="parcours-accompagnement" className="services section light-background">
+//                 <div className="container">
+//                     <h2>Parcours d’accompagnement</h2>
+//                     <div className="row gy-4">
+//                         {[projetFamilialImg, coachingImg, svstImg, organisationFamilialeImg].map((img, index) => (
+//                             <div className={`col-lg-3 col-md-6`} key={index}>
+//                                 <div className="service-item position-relative">
+//                                     <div className="card-wrapper">
+//                                         <div className={`flip-card ${flippedCards[index + 9] ? 'flipped' : ''}`}>
+//                                             <div className="flip-card-inner">
+//                                                 <div className="flip-card-front">
+//                                                     <div className="card-image-container">
+//                                                         <img src={img} alt={`Parcours ${index}`} className="card-img-top" />
+//                                                         <div className="overlay-text">
+//                                                             <h3>Parcours {index + 1}</h3>
+//                                                         </div>
+//                                                     </div>
+//                                                 </div>
+//                                                 <div className="flip-card-back">
+//                                                     <div className="card-content">
+//                                                         <h3>Parcours {index + 1}</h3>
+//                                                         <p>Description du parcours.</p>
+//                                                         <Link to="/parcours-details" className="btn btn-primary">Détails</Link>
+//                                                     </div>
+//                                                 </div>
+//                                             </div>
+//                                         </div>
+//                                     </div>
+
+//                                     {isMobile && !flippedCards[index + 9] && (
+//                                         <button
+//                                             className="btn-en-savoir-plus"
+//                                             onClick={() => handleFlip(index + 9)}
+//                                         >
+//                                             En savoir plus
+//                                         </button>
+//                                     )}
+//                                 </div>
+//                             </div>
+//                         ))}
+//                     </div>
+//                 </div>
+//             </section>
+//         </main>
+//     );
+// };
+
+// export default Services;
+// import React, { useState, useEffect } from 'react';
+// import { Link, useLocation } from 'react-router-dom';
+
+// // Importation des images
+// import formationImg from '../../assets/img/gestion-emotion/gestion-emotion4.jpg';
+// import accompagnementImg from '../../assets/img/parentalité/parentalité (2).jpg';
+// import projetFamilialImg from '../../assets/img/comefficacité/coefficacité (6).jpg';
+// import coachingImg from '../../assets/img/comefficacité/coefficacité (6).jpg';
+// import svstImg from '../../assets/img/comefficacité/coefficacité (6).jpg';
+// import organisationFamilialeImg from '../../assets/img/comefficacité/coefficacité (6).jpg';
+
+// const Services: React.FC = () => {
+//     const location = useLocation();
+//     const [flippedCards, setFlippedCards] = useState<{ [key: number]: boolean }>({});
+//     const [isMobile, setIsMobile] = useState(false);
+
+//     // Détecter la taille de l'écran pour adapter l'affichage sur mobile
+//     useEffect(() => {
+//         const handleResize = () => {
+//             setIsMobile(window.innerWidth <= 768);  // Si l'écran est plus petit que 768px
+//         };
+//         handleResize(); // Vérification initiale
+//         window.addEventListener('resize', handleResize);
+
+//         return () => {
+//             window.removeEventListener('resize', handleResize);
+//         };
+//     }, []);
+
+//     useEffect(() => {
+//         // Vérifier si l'URL contient une ancre (hash)
+//         if (location.hash) {
+//             const element = document.querySelector(location.hash);
+//             if (element) {
+//                 element.scrollIntoView({ behavior: 'smooth' });
+//             }
+//         }
+//     }, [location]);
+
+//     // Fonction pour gérer le flip de la carte
+//     const handleFlip = (index: number) => {
+//         setFlippedCards((prev) => ({
+//             ...prev,
+//             [index]: !prev[index],
+//         }));
+//     };
+
+//     // Données pour les cartes
+//     const formations = [
+//         { title: 'Gestion des émotions', description: 'Maîtrisez vos émotions pour naviguer sereinement à travers les défis de la vie.', image: formationImg, link: '/formation-details/1' },
+//         { title: 'Parentalité', description: 'Élevez vos enfants avec amour et sagesse pour un avenir harmonieux.', image: formationImg, link: '/formation-details/2' },
+//         { title: 'Communiquer avec efficacité', description: 'Développez des compétences de communication pour des échanges authentiques et constructifs.', image: formationImg, link: '/formation-details/3' },
+//     ];
+
+//     const accompagnements = [
+//         { title: 'Développement personnel et professionnel', description: 'Libérez votre potentiel et atteignez de nouveaux sommets dans votre vie personnelle et professionnelle.', image: accompagnementImg, link: '/accompagnement-details/1' },
+//         { title: 'Bilan de compétences', description: 'Identifiez vos forces et vos aspirations pour construire une carrière épanouissante.', image: accompagnementImg, link: '/accompagnement-details/2' },
+//         { title: 'Schéma comportementaux', description: 'Comprenez et transformez vos schémas comportementaux pour une vie plus équilibrée.', image: accompagnementImg, link: '/accompagnement-details/3' },
+//     ];
+
+//     const parcoursAccompagnement = [
+//         { title: 'Life Design Coaching', description: 'Créez la vie de vos rêves avec un accompagnement personnalisé en life design coaching.', image: projetFamilialImg, link: '/parcours-details/1' },
+//         { title: 'Système de Valeurs, Stratégies et Tactiques', description: 'Optimisez vos stratégies et tactiques pour aligner vos actions avec vos valeurs profondes.', image: coachingImg, link: '/parcours-details/2' },
+//         { title: 'Organisation familiale', description: "Améliorez l'harmonie et l'efficacité de votre foyer grâce à une organisation familiale optimale.", image: svstImg, link: '/parcours-details/3' },
+//         { title: 'Élaborer un projet familial halal et tayiib', description: 'Concevez un projet familial éthique et prospère, en accord avec vos valeurs.', image: organisationFamilialeImg, link: '../IndividualPages/SupportRoute/HalalProject.tsx' },
+//     ];
+
+//     // Fonction pour rendre une carte
+//     const renderCard = (item: { title: string; description: string; image: string; link: string }, index: number, sectionIndex: number, columnClass: string) => (
+//         <div className={columnClass} key={index}>
+//             <div className="service-item position-relative">
+//                 <div className="card-wrapper">
+//                     <div className={`flip-card ${flippedCards[index + sectionIndex] ? 'flipped' : ''}`}>
+//                         <div className="flip-card-inner">
+//                             <div className="flip-card-front">
+//                                 <div className="card-image-container">
+//                                     <img src={item.image} alt={`${item.title}`} className="card-img-top" />
+//                                     <div className="overlay-text">
+//                                         <h3>{item.title}</h3>
+//                                     </div>
+//                                 </div>
+//                             </div>
+//                             <div className="flip-card-back">
+//                                 <div className="card-content">
+//                                     <h3>{item.title}</h3>
+//                                     <p>{item.description}</p>
+//                                     <Link to={item.link} className="btn btn-primary">Détails</Link>
+//                                 </div>
+//                             </div>
+//                         </div>
+//                     </div>
+//                 </div>
+
+//                 {isMobile && !flippedCards[index + sectionIndex] && (
+//                     <button
+//                         className="btn-en-savoir-plus"
+//                         onClick={() => handleFlip(index + sectionIndex)}
+//                     >
+//                         En savoir plus
+//                     </button>
+//                 )}
+//             </div>
+//         </div>
+//     );
+
+//     return (
+//         <main className="main">
+//             {/* Page Title */}
+//             <div className="page-title accent-background">
+//                 <div className="container d-lg-flex justify-content-between align-items-center">
+//                     <h1 className="mb-2 mb-lg-0">Nos Services</h1>
+//                     <nav className="breadcrumbs">
+//                         <ol>
+//                             <li><Link to="/">Accueil</Link></li>
+//                             <li className="current">Services</li>
+//                         </ol>
+//                     </nav>
+//                 </div>
+//             </div>
+
+//             {/* Formation Section */}
+//             <section id="formation" className="services section light-background">
+//                 <div className="container">
+//                     <h2>Formation</h2>
+//                     <div className="row gy-4">
+//                         {formations.map((item, index) => renderCard(item, index, 0, 'col-lg-4 col-md-6 col-12'))}
+//                     </div>
+//                 </div>
+//             </section>
+
+//             {/* Accompagnement personnalisé Section */}
+//             <section id="accompagnement-personnalise" className="services section light-background">
+//                 <div className="container">
+//                     <h2>Accompagnement personnalisé</h2>
+//                     <div className="row gy-4">
+//                         {accompagnements.map((item, index) => renderCard(item, index, 3, 'col-lg-4 col-md-6 col-12'))}
+//                     </div>
+//                 </div>
+//             </section>
+
+//             {/* Parcours d’accompagnement Section */}
+//             <section id="parcours-accompagnement" className="services section light-background">
+//                 <div className="container">
+//                     <h2>Parcours d’accompagnement</h2>
+//                     <div className="row gy-4">
+//                         {parcoursAccompagnement.map((item, index) => renderCard(item, index, 6, 'col-lg-3 col-md-4 col-6'))}
+//                     </div>
+//                 </div>
+//             </section>
+//         </main>
+//     );
+// };
+
+// export default Services;
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import Formation from './formationtraining/Formation';
+import Coaching from './PersonalizedSupport/Coaching';
+import CoachingJourney from './SupportRoute/CoachingJourney';
 
 const Services = () => {
-    const [services, setServices] = useState<any[]>([]);
-    const [flippedCards, setFlippedCards] = useState<{ [key: number]: boolean }>({});
-    const [isMobile, setIsMobile] = useState(false);  // Ajout d'un état pour détecter la taille de l'écran
-
-    useEffect(() => {
-        // Detecter la taille de l'écran et mettre à jour l'état
-        const handleResize = () => {
-            setIsMobile(window.innerWidth <= 768);  // Si la largeur de l'écran est <= 768px
-        };
-
-        handleResize(); // Appel initial pour savoir l'état lors du chargement
-        window.addEventListener('resize', handleResize); // Ecouter les changements de taille de l'écran
-
-        return () => {
-            window.removeEventListener('resize', handleResize); // Nettoyer l'écouteur
-        };
-    }, []);
-
-    useEffect(() => {
-        const fetchData = async () => {
-            const data = [
-                {
-                    title: "Développement Personnel",
-                    description: "Développez votre potentiel et transformez votre vie avec notre approche unique de développement personnel.",
-                    imageUrl: devPersonnelImg,
-                    overlayText: "Développez votre potentiel et transformez votre vie avec notre approche unique de développement personnel"
-                },
-                {
-                    title: "Coaching en Innovation et Créativité",
-                    description: "Découvrez de nouvelles perspectives et libérez votre potentiel grâce à une approche innovante et créative.",
-                    imageUrl: coachingInnovationImg,
-                    overlayText: "Libérez votre créativité"
-                },
-                {
-                    title: "Stratégies de Croissance d'Entreprise",
-                    description: "Boostez la croissance de votre entreprise avec des stratégies innovantes et une vision audacieuse.",
-                    imageUrl: strategieEntrepriseImg,
-                    overlayText: "Croissance stratégique"
-                },
-                {
-                    title: "Équilibre Vie Professionnelle et Vie Personnelle",
-                    description: "Atteignez l'équilibre parfait entre vie professionnelle et personnelle grâce à notre approche innovante et équilibrée.",
-                    imageUrl: equilibreVieImg,
-                    overlayText: "Trouver l'équilibre"
-                },
-                {
-                    title: "Leadership et Gestion d'Équipe",
-                    description: "Renforcez votre leadership et optimisez la gestion de votre équipe grâce à des stratégies impactantes et visionnaires.",
-                    imageUrl: leadershipEquipeImg,
-                    overlayText: "Leadership inspirant"
-                },
-                {
-                    title: "Accompagnement des adolescents",
-                    description: "Aidez vos adolescents à s'épanouir avec des solutions adaptées et une approche bienveillante.",
-                    imageUrl: accompagnementAdosImg,
-                    overlayText: "Accompagner l'adolescence"
-                },
-            ];
-            setServices(data);
-        };
-
-        fetchData();
-    }, []);
-
-    const handleFlip = (index: number) => {
-        setFlippedCards((prev) => ({
-            ...prev,
-            [index]: !prev[index]
-        }));
-    };
-
     return (
         <main className="main">
-
-            {/* Page Title */}
             <div className="page-title accent-background">
                 <div className="container d-lg-flex justify-content-between align-items-center">
-                    <h1 className="mb-2 mb-lg-0">Services</h1>
+                    <h1 className="mb-2 mb-lg-0">Nos Services</h1>
                     <nav className="breadcrumbs">
                         <ol>
-                            <li><Link to="/">Accueil</Link></li>
+                            <li><NavLink to="/">Accueil</NavLink></li>
                             <li className="current">Services</li>
                         </ol>
                     </nav>
                 </div>
             </div>
 
-            {/* Services Section */}
-            <section id="services" className="services section light-background">
-                <div className="container">
-                    <div className="row gy-4">
-                        {services.map((service, index) => (
-                            <div className={`col-lg-4 col-md-6`} data-aos="fade-up" data-aos-delay={100 * index} key={index}>
-                                <div className="service-item position-relative">
-                                    <div className="card-wrapper">
-                                        <div className={`flip-card ${flippedCards[index] ? 'flipped' : ''}`}>
-                                            <div className="flip-card-inner">
-                                                {/* Face avant de la carte */}
-                                                <div className="flip-card-front">
-                                                    <div className="card-image-container">
-                                                        <img src={service.imageUrl} alt={service.title} className="card-img-top" />
-                                                        <div className="overlay-text">
-                                                            <h3>{service.overlayText}</h3>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                {/* Face arrière de la carte */}
-                                                <div className="flip-card-back">
-                                                    <div className="card-content">
-                                                        <h3>{service.title}</h3>
-                                                        <p>{service.description}</p>
-                                                        <Link to="/service-details" className="btn btn-primary">Détails</Link>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    {/* Bouton "En savoir plus" uniquement sur petits écrans et si la carte n'est pas retournée */}
-                                    {isMobile && !flippedCards[index] && (
-                                        <button
-                                            className="btn-en-savoir-plus"
-                                            onClick={() => handleFlip(index)}
-                                        >
-                                            En savoir plus
-                                        </button>
-                                    )}
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
+            <Formation />
+            <Coaching />
+            <CoachingJourney />
         </main>
     );
 };

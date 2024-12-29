@@ -79,6 +79,7 @@
 
 // export default Team;
 import React, { useState, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
 import teamImage1 from '../../assets/img/team/team-1.jpg'; // Assurez-vous que le chemin est correct
 import teamImage2 from '../../assets/img/team/team-2.jpg'; // Assurez-vous que le chemin est correct
 import teamImage3 from '../../assets/img/team/team-3.jpg'; // Assurez-vous que le chemin est correct
@@ -128,7 +129,9 @@ const Team = () => {
                             <h1 className="mb-2 mb-lg-0">Équipe</h1>
                             <nav className="breadcrumbs">
                                 <ol>
-                                    <li><a href="/">Accueil</a></li>
+                                    <li>
+                                        <NavLink to="index.html">Accueil</NavLink>
+                                    </li>
                                     <li className="current">Équipe</li>
                                 </ol>
                             </nav>

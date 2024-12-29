@@ -617,7 +617,7 @@ h6 {
 .footer .footer-links ul a {
   color: color-mix(in srgb, var(--default-color), transparent 30%);
   display: inline-block;
-  line-height: 1;
+  line-height: 0;
 }
 
 .footer .footer-links ul a:hover {
@@ -1129,7 +1129,7 @@ section,
 
 .about ul li {
   padding: 5px 0;
-  display: flex;
+  /* display: flex; */
   align-items: center;
 }
 
@@ -1572,7 +1572,7 @@ section,
 /*--------------------------------------------------------------
 # Testimonials Section
 --------------------------------------------------------------*/
-.testimonials .testimonial-item {
+/* .testimonials .testimonial-item {
   background-color: var(--surface-color);
   box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.1);
   padding: 30px;
@@ -1634,7 +1634,7 @@ section,
   font-style: italic;
   margin: 15px 0 0 0;
   padding: 0;
-}
+} */
 
 /*--------------------------------------------------------------
 # Features Section
@@ -3248,7 +3248,7 @@ iframe {
   background-color: #ff6a00;
   color: white;
   border: none;
-  padding: 0px 0px;
+  /* padding: 5px 50px; */
   font-size: 16px;
   cursor: pointer;
   border-radius: 5px;
@@ -3919,4 +3919,2158 @@ button:hover {
   text-align: center;
   font-size: 18px;
   border-radius: 0 0 10px 10px;
+}
+/* ParcoursDetails.css */
+
+/* Conteneur global */
+.parcours-details-container {
+  background-color: #f8f9fa; /* Couleur de fond */
+}
+
+/* Style de la section contenant le texte */
+.text-container {
+  opacity: 0;
+  transform: translateX(-50px);
+  animation: fadeInLeft 1s forwards;
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Conteneur des images avec positionnement relatif */
+.image-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+/* Première image : image principale */
+.image1 {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.3);
+}
+
+/* Deuxième image décalée */
+.overlay-img {
+  width: 70%;
+  height: auto;
+  object-fit: cover;
+  position: absolute;
+  top: 30%;
+  left: 10%;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Effet sur le bouton Unsplash */
+button {
+  transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Marges et paddings */
+.container {
+  max-width: 1200px;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+}
+
+p {
+  font-size: 1.125rem;
+  /* line-height: 1.6; */
+  color: #666;
+}
+
+.lead {
+  font-weight: 400;
+  color: #555;
+}
+.parcours-details-container {
+  background-color: #1a1a1a; /* Fond sombre */
+}
+
+.parcours-details-container h2 {
+  color: #ffffff; /* Blanc pour le titre */
+  font-weight: 800; /* Plus gras */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Ombre légère pour améliorer le contraste */
+}
+
+.parcours-details-container .text-light {
+  color: #f0f0f0 !important; /* Texte légèrement plus lumineux */
+}
+
+.parcours-details-container .btn-danger {
+  margin-top: 15px;
+}
+
+.parcours-details-container .row {
+  padding: 20px;
+}
+
+.parcours-details-container img {
+  max-height: 400px;
+  object-fit: cover;
+}
+/* Ajouter cette règle dans ton fichier CSS */
+.card-content p {
+  color: #f0f0f0; /* Un blanc très clair ou un gris clair */
+  font-size: 1.1rem; /* Ajuster la taille si nécessaire */
+  line-height: 1.5; /* Améliorer l'espacement du texte */
+}
+/* CSS personnalisé pour la mise en page des images stackées */
+
+.image-stack {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.image-stack .stack-front,
+.image-stack .stack-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+.image-stack .stack-back {
+  z-index: -1;
+  opacity: 0.6; /* L'image arrière est plus transparente */
+}
+
+/* Effet au survol de l'image empilée */
+.image-stack:hover .stack-front {
+  transform: scale(1.1); /* Agrandissement de l'image avant au survol */
+}
+
+.features-item {
+  margin-bottom: 50px;
+}
+
+.features-item .btn-get-started {
+  margin-top: 20px;
+}
+
+/* Ajustements pour l'espacement des colonnes */
+.features-item .col-lg-7 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.features-img-bg img {
+  object-fit: cover;
+  height: 100%;
+}
+
+/* Effet d'animation AOS */
+[data-aos="fade-up"] {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+[data-aos="fade-up"].aos-animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+[data-aos="zoom-out"] {
+  opacity: 0;
+  transform: scale(1.2);
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+[data-aos="zoom-out"].aos-animate {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Ajout css section support route"parcours d'accompagnement*/
+/* Global Styles */
+
+/* .container {
+  margin-top: 50px;
+} */
+
+/* Hero Section */
+/* .hero {
+  background-image: url("./assets/img/hero-carousel/hero-carousel-1.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+  color: white;
+  text-align: center;
+  position: relative;
+} */
+
+/* .hero-title {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  animation: fadeInUp 1.5s ease-in-out;
+} */
+
+/* .hero-description {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  animation: fadeInUp 1.8s ease-in-out;
+} */
+
+/* .btn-primary {
+  font-size: 1.1rem;
+  padding: 10px 20px;
+  background-color: #007bff;
+  border: none;
+  animation: fadeInUp 2s ease-in-out;
+} */
+
+/* Animations */
+/* @keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} */
+
+/* Section Styles */
+/* .about-section,
+.benefits-section,
+.modules-section,
+.testimonials-section,
+.cta-section {
+  padding: 80px 0;
+} */
+
+/* Section Titles */
+/* .section-title {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+} */
+
+/* Button */
+/* .btn-primary {
+  padding: 10px 20px;
+  font-size: 1.1rem;
+} */
+
+/* Additional styles as needed... */
+/*CSS pour la section Oranization Familly..*/
+/* Global Styles */
+/* body {
+  font-family: "Verdana", sans-serif;
+} */
+
+/* .container {
+  margin-top: 50px;
+} */
+
+/* Hero Section */
+/* .hero {
+  background-image: url("./assets/img/parentalité/parentalité (1).jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+  color: white;
+  text-align: center;
+} */
+
+.hero-title {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  animation: fadeInUp 1.5s ease-in-out;
+}
+
+.hero-description {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  animation: fadeInUp 1.8s ease-in-out;
+}
+
+.btn-primary {
+  font-size: 1.1rem;
+  padding: 10px 20px;
+  background-color: #28a745;
+  border: none;
+  animation: fadeInUp 2s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Section Styles */
+.about-section,
+.benefits-section,
+.modules-section,
+.testimonials-section,
+.cta-section {
+  padding: 80px 0;
+}
+
+/* Section Titles */
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+/* Button */
+.btn-primary {
+  padding: 10px 20px;
+  font-size: 1.1rem;
+}
+
+/* Icon and Text Styling */
+.benefit-icon,
+.module-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+/* Additional styles for specific sections... */
+
+/*CSS pour la section SVTS..*/
+/* Global Styles */
+body {
+  font-family: "Arial", sans-serif;
+}
+
+/* .container {
+  margin-top: 50px;
+} */
+
+/* Hero Section .hero {
+  background-image: url("./assets/img/gestion-emotion/gestion-emotion1.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+  color: white;
+  text-align: center;
+} */
+
+.hero-title {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  animation: fadeInUp 1.5s ease-in-out;
+}
+
+.hero-description {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  animation: fadeInUp 1.8s ease-in-out;
+}
+
+.btn-primary {
+  font-size: 1.1rem;
+  padding: 10px 20px;
+  background-color: #28a745;
+  border: none;
+  animation: fadeInUp 2s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Section Styles */
+.about-section,
+.values-section,
+.strategies-section,
+.tactics-section,
+.testimonials-section,
+.cta-section {
+  padding: 80px 0;
+}
+
+/* Section Titles */
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+/* Icon and Text Styling */
+.value-icon,
+.strategy-icon,
+.tactic-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+/* Additional styles for specific sections... */
+.testimonials {
+  padding: 30px 0;
+  position: relative;
+  background: rgba(
+    0,
+    0,
+    0,
+    0.8
+  ); /* Arrière-plan plus foncé avec transparence */
+}
+
+.testimonials:before {
+  content: "";
+  background: color-mix(in srgb, var(--background-color), transparent 50%);
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+.testimonials .testimonials-bg {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.testimonials .container {
+  position: relative;
+  z-index: 3;
+}
+
+.testimonials .testimonial-item {
+  text-align: center;
+  margin-bottom: 30px; /* Ajouté pour espacer chaque témoignage */
+}
+
+.testimonials .testimonial-item .testimonial-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid #ff6a00; /* Bordure orange */
+  margin: 0 auto;
+  transition: all 0.3s ease; /* Transition fluide pour l'effet au survol */
+}
+
+.testimonials .testimonial-item .testimonial-img:hover {
+  transform: scale(1.1); /* Effet au survol : agrandir l'image */
+}
+
+.testimonials .testimonial-item h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 10px 0 5px 0;
+}
+
+.testimonials .testimonial-item h4 {
+  font-size: 14px;
+  margin: 0 0 15px 0;
+  color: color-mix(in srgb, var(--default-color), transparent 40%);
+}
+
+.testimonials .testimonial-item .stars {
+  margin-bottom: 15px;
+}
+
+.testimonials .testimonial-item .stars i {
+  color: #ffc107;
+  margin: 0 1px;
+}
+
+.testimonials .testimonial-item .quote-icon-left,
+.testimonials .testimonial-item .quote-icon-right {
+  color: color-mix(in srgb, var(--default-color), transparent 40%);
+  font-size: 26px;
+  line-height: 0;
+}
+
+.testimonials .testimonial-item .quote-icon-left {
+  display: inline-block;
+  left: -5px;
+  position: relative;
+}
+
+.testimonials .testimonial-item .quote-icon-right {
+  display: inline-block;
+  right: -5px;
+  position: relative;
+  top: 10px;
+  transform: scale(-1, -1);
+}
+
+.testimonials .testimonial-item p {
+  font-style: italic;
+  margin: 0 auto 15px auto;
+}
+
+.testimonials .swiper-wrapper {
+  height: auto;
+}
+
+.testimonials .swiper-pagination {
+  margin-top: 20px;
+  position: absolute;
+  text-align: center;
+  transition: 0.3s opacity;
+  transform: translate3d(0, 0, 0);
+  z-index: 10;
+  bottom: 20px; /* Espacement ajouté en bas du carrousel */
+  width: 100%;
+}
+
+/* Pagination (cercle) */
+.carousel-indicators {
+  position: absolute;
+  bottom: -40px; /* Ajuste la position verticale des indicateurs */
+}
+
+.carousel-indicators li {
+  background-color: #aaa; /* Couleur gris par défaut pour les cercles */
+  border-radius: 50%; /* Cercle */
+  width: 20px; /* Taille du cercle */
+  height: 20px; /* Taille du cercle */
+  transition: background-color 0.3s ease; /* Transition fluide de la couleur */
+}
+
+.carousel-indicators .active {
+  background-color: #fff; /* Couleur blanche pour l'indicateur actif */
+}
+
+/* Effet de transition fluide */
+.carousel-indicators li {
+  opacity: 0.7; /* Légère transparence pour les cercles non actifs */
+}
+
+.carousel-indicators li.active {
+  opacity: 1; /* Aucun effet de transparence lorsque l'élément est actif */
+}
+
+/* Bullets de la pagination */
+/* .swiper-pagination-bullet { */
+/* background-color: #ffbb33; Couleur par défaut des bullets */
+/* width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin: 0 4px; Espacement entre les points */
+/* transition: background-color 0.3s ease, transform 0.3s ease;
+} */
+
+/* Style de bullet actif */
+/* .swiper-pagination-bullet-active {
+  background-color: #333; /* Couleur active */
+/* transform: scale(1.2); Agrandir légèrement le point actif */
+/* } */
+
+/* Ajustement des bullets en mode horizontal */
+/* .swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction { */
+/* bottom: 8px; /* Ajuster cette valeur selon l'espacement voulu */
+/* left: 0;
+  width: 100%;
+} */
+
+.swiper {
+  list-style: none;
+}
+
+[data-aos].aos-animate {
+  pointer-events: auto;
+}
+
+[data-aos] {
+  pointer-events: none;
+}
+
+.container,
+.container-fluid,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl,
+.container-xxl {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+}
+
+section,
+.section {
+  color: var(--default-color);
+}
+.testimonials .swiper-pagination {
+  margin-top: 20px;
+  position: absolute;
+  text-align: center;
+  transition: 0.3s opacity;
+  transform: translate3d(0, 0, 0);
+  z-index: 10;
+  bottom: 20px; /* Espacement ajouté en bas du carrousel */
+  width: 100%;
+}
+
+/* Bullets de la pagination */
+.swiper-pagination-bullet {
+  background-color: #ffbb33; /* Couleur par défaut des bullets */
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin: 0 4px; /* Espacement entre les points */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Style de bullet actif */
+.swiper-pagination-bullet-active {
+  background-color: #333; /* Couleur active */
+  transform: scale(1.2); /* Agrandir légèrement le point actif */
+}
+
+/* Ajustement des bullets en mode horizontal */
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  bottom: 8px; /* Ajuster cette valeur selon l'espacement voulu */
+  left: 0;
+  width: 100%;
+}
+
+.swiper {
+  list-style: none;
+}
+
+[data-aos].aos-animate {
+  pointer-events: auto;
+}
+
+[data-aos] {
+  pointer-events: none;
+}
+
+.container,
+.container-fluid,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl,
+.container-xxl {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+}
+
+section,
+.section {
+  color: var(--default-color);
+}
+
+/*CSS pour la section Hallal..*/
+/* Global Styles */
+body {
+  font-family: "Arial", sans-serif;
+}
+
+/* .container {
+  margin-top: 50px;
+} */
+
+/* Hero Section */
+/* .hero {
+  background-image: url("/src/assets/img/projethalal/PH1 (1).jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+  color: white;
+  text-align: center;
+} */
+
+.hero-title {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  animation: fadeInUp 1.5s ease-in-out;
+}
+
+.hero-description {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  animation: fadeInUp 1.8s ease-in-out;
+}
+
+.btn-primary {
+  font-size: 1.1rem;
+  padding: 10px 20px;
+  background-color: #28a745;
+  border: none;
+  animation: fadeInUp 2s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Section Styles */
+.about-section,
+.benefits-section,
+.modules-section,
+.testimonials-section,
+.cta-section {
+  padding: 80px 0;
+}
+
+/* Section Titles */
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+/* Icon and Text Styling */
+.benefit-icon,
+.module-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+/* Additional styles for specific sections... */
+/* CSS pour la pagination */
+.carousel-indicators {
+  position: absolute;
+  bottom: -30px; /* Déplace la pagination plus bas */
+}
+
+/* Optionnel : pour le style du carousel (mouvement fluide) */
+.carousel-item {
+  transition: transform 0.5s ease; /* Transition fluide pour le défilement */
+}
+
+/* Pour les témoignages */
+.testimonial-item {
+  text-align: center;
+  padding-bottom: 40px;
+}
+.testimonials .section-title p {
+  font-size: 24px; /* Taille plus grande pour le texte */
+  font-weight: bold; /* Texte en gras */
+  color: 758694; /* Texte noir ou une couleur plus foncée si nécessaire */
+}
+.testimonials .testimonial-item p span {
+  font-size: 18px; /* Taille du texte plus grande pour le span */
+  /* font-weight: bold; En gras */
+  color: #000000; /* Optionnel : assurez-vous que le texte est noir */
+}
+.testimonials .testimonial-item h4 {
+  font-size: 18px; /* Taille du texte du h4 plus grande si nécessaire */
+  font-weight: bold; /* Rend le texte en gras */
+  color: B7B7B7; /* Couleur plus foncée que le gris clair */
+}
+/* Cibler les icônes de citation dans la section-title */
+.testimonials .section-title {
+  text-align: center;
+  position: relative;
+}
+/* Section Title */
+.testimonials .section-title {
+  position: relative;
+  text-align: center; /* Centrer le texte */
+  padding: 20px 0;
+}
+
+.testimonials .section-title p {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333333; /* Couleur plus foncée pour le texte */
+  margin: 0;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1; /* Assure que le texte reste au-dessus des icônes */
+}
+
+/* Icônes de citation */
+.testimonials .quote-icon-left,
+.testimonials .quote-icon-right {
+  font-size: 40px; /* Taille des icônes */
+  color: #333333; /* Couleur des icônes */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%); /* Centrer verticalement */
+  z-index: 0; /* Les icônes sont derrière le texte */
+  right: 30px;
+  left: 30px;
+} /* ================================================
+   STYLES POUR TOUTES LES TAILLES D'ÉCRAN
+   ================================================ */
+.testimonials .section-title {
+  position: relative; /* Définir une référence pour le positionnement des icônes */
+  text-align: center; /* Centrer le texte */
+  padding: 20px 0;
+}
+
+.testimonials .section-title p {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333333;
+  margin: 0;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1; /* Texte au-dessus des icônes */
+}
+
+/* Icônes de citation (gauche et droite) */
+.testimonials .quote-icon-left,
+.testimonials .quote-icon-right {
+  position: absolute; /* Position absolue par rapport à la section-title */
+  top: 50%; /* Centrer verticalement */
+  transform: translateY(-50%); /* Centrer verticalement */
+  font-size: 40px;
+  color: #333333;
+  z-index: 0; /* Derrière le texte */
+}
+
+/* .testimonials .quote-icon-left {
+  left: 450px; /*  Positionner l'icône à gauche à 450px */
+/* transform: translateY(-50%) scaleX(-1); Inverser horizontalement */
+/* } */
+
+/* .testimonials .quote-icon-right { */
+/* right: 450px; /* Positionner l'icône à droite à 450px */
+/* transform: translateY(-50%); /* Pas de changement horizontal */
+/* } */
+
+/* ================================================
+   AJUSTEMENTS POUR LES PETITS ÉCRANS (tablettes et mobiles)
+   ================================================ */
+@media (max-width: 768px) {
+  .testimonials .section-title p {
+    font-size: 20px; /* Réduire la taille du texte */
+  }
+
+  /* Ajuster la taille des icônes */
+  .testimonials .quote-icon-left,
+  .testimonials .quote-icon-right {
+    font-size: 30px; /* Réduire la taille des icônes */
+  }
+
+  /* Position des icônes sur les petits écrans */
+  .testimonials .quote-icon-left {
+    left: 50px; /* Réduire la position gauche à 50px */
+  }
+
+  .testimonials .quote-icon-right {
+    right: 50px; /* Réduire la position droite à 50px */
+  }
+}
+.testimonials .quote-icon-left {
+  left: 370px; /* Positionner l'icône à gauche à 450px */
+  transform: translateY(-50%) scaleX(-1); /* Inverser horizontalement */
+}
+
+.testimonials .quote-icon-right {
+  right: 370px; /* Positionner l'icône à droite à 450px */
+  transform: translateY(-50%); /* Pas de changement horizontal */
+}
+
+/* ================================================
+   AJUSTEMENTS POUR LES TRÈS PETITS ÉCRANS (mobiles)
+   ================================================ */
+@media (max-width: 480px) {
+  .testimonials .section-title p {
+    font-size: 18px; /* Taille du texte réduite sur les écrans très petits */
+  }
+
+  .testimonials .quote-icon-left,
+  .testimonials .quote-icon-right {
+    font-size: 24px; /* Plus petites icônes */
+  }
+
+  .testimonials .quote-icon-left {
+    left: 50px; /* Position gauche réduite à 50px pour très petits écrans */
+  }
+
+  .testimonials .quote-icon-right {
+    right: 50px; /* Position droite réduite à 50px pour très petits écrans */
+  }
+} /* Style général pour les éléments de la liste */
+ul li {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+/* Style de l'icône */
+ul li i {
+  margin-right: 10px;
+  color: #3498db; /* Couleur de l'icône */
+}
+
+/* Style du texte principal (le titre) */
+ul li span {
+  font-weight: bold;
+  font-size: 1.1em;
+  color: #333;
+}
+
+/* Style du texte sous le titre avec un effet */
+.li-description {
+  display: none; /* Le texte est caché au départ */
+  margin-top: 8px; /* Espace entre le titre et la description */
+  font-size: 0.95em;
+  color: #666;
+  padding-left: 30px; /* Ajouter un petit retrait pour un effet élégant */
+  transition: opacity 0.3s ease, max-height 0.3s ease;
+  max-height: 0; /* Cache le texte au départ */
+  overflow: hidden;
+}
+
+/* Affichage du texte au survol */
+ul li:hover .li-description {
+  display: block;
+  opacity: 1;
+  max-height: 200px; /* Permet de faire apparaître progressivement le texte */
+}
+
+/* Ajout d'une animation légère pour l'élément au survol */
+ul li:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease;
+}
+
+/* Optionnel: Animation d'entrée avec AOS */
+ul li[data-aos="fade-up"]:hover {
+  transform: translateY(-10px);
+}
+/* Style général pour les éléments de la liste */
+ul li {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+/* Style de l'icône */
+ul li i {
+  margin-right: 10px;
+  /* color: #3498db; Couleur de l'icône */
+}
+
+/* Style du titre (span) qui s'affiche horizontalement */
+.li-title {
+  font-weight: bold;
+  font-size: 1.1em;
+  color: #333;
+  display: inline-block; /* S'assurer qu'il s'affiche sur une seule ligne */
+  margin-right: 10px; /* Un petit espace après le texte principal */
+}
+
+/* Style du texte sous le titre (li-description) avec un effet */
+.li-description {
+  display: none; /* Le texte est caché au départ */
+  margin-top: 8px; /* Espace entre le titre et la description */
+  font-size: 0.95em;
+  color: #666;
+  padding-left: 30px; /* Un petit retrait pour l'effet esthétique */
+  max-height: 0; /* Cache le texte au départ */
+  overflow: hidden;
+  transition: opacity 0.3s ease, max-height 0.3s ease;
+}
+
+/* Affichage du texte au survol */
+ul li:hover .li-description {
+  display: block;
+  opacity: 1;
+  max-height: 200px; /* Permet de faire apparaître progressivement le texte */
+}
+
+/* Ajout d'une animation légère pour l'élément au survol */
+ul li:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease;
+}
+
+/* Optionnel: Animation d'entrée avec AOS */
+ul li[data-aos="fade-up"]:hover {
+  transform: translateY(-10px);
+}
+
+/* Style général pour la section */
+.section-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.section-description {
+  font-size: 1.2rem;
+  color: #777;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* Cartes modernes pour chaque feature, agrandies */
+.features-cards {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.feature-card {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 30px;
+  width: 32%; /* Agrandir les cartes */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-icon {
+  font-size: 2.5rem; /* Agrandir les icônes */
+  color: #3498db;
+  margin-bottom: 15px;
+}
+
+.feature-card h5 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.feature-card p {
+  font-size: 1.1rem; /* Agrandir le texte à l'intérieur des cartes */
+  color: #555;
+  margin-bottom: 15px;
+}
+
+/* Bouton personnalisé */
+.btn-get-started {
+  background-color: Orange;
+  color: white;
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-get-started:hover {
+  background-color: #e65a00;
+  color: black;
+}
+
+/* Animation et effets de survol */
+[data-aos="flip-left"] {
+  transform: rotateY(0deg);
+  animation-name: flipInLeft;
+}
+
+@keyframes flipInLeft {
+  0% {
+    transform: rotateY(-90deg);
+  }
+  100% {
+    transform: rotateY(0deg);
+  }
+}
+
+/* Ajustements pour les petits écrans */
+@media (max-width: 768px) {
+  .features-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feature-card {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+
+  .col-lg-6 {
+    order: initial;
+  }
+}
+/* Écran de 768px ou moins (tablettes et petites résolutions) */
+@media (max-width: 768px) {
+  .testimonials .quote-icon-left {
+    left: 150px;
+    transform: translateY(-50%) scaleX(-1);
+  }
+
+  .testimonials .quote-icon-right {
+    right: 150px;
+    transform: translateY(-50%);
+  }
+}
+
+/* Écran de 480px ou moins (smartphones) */
+@media (max-width: 480px) {
+  .testimonials .quote-icon-left {
+    left: 100px;
+    transform: translateY(-50%) scaleX(-1);
+  }
+
+  .testimonials .quote-icon-right {
+    right: 100px;
+    transform: translateY(-50%);
+  }
+}
+/* Écrans de 1366px ou moins (petits écrans PC, comme un 14 pouces) */
+@media (max-width: 1366px) {
+  .testimonials .quote-icon-left {
+    left: 370px; /* Ajustez la position de l'icône à gauche pour un écran de petite taille */
+    transform: translateY(-50%) scaleX(-1); /* Inverser horizontalement */
+  }
+
+  .testimonials .quote-icon-right {
+    right: 370px; /* Ajustez la position de l'icône à droite */
+    transform: translateY(-50%); /* Pas de changement horizontal */
+  }
+}
+
+/* Écran de 768px ou moins (tablettes et petits écrans) */
+@media (max-width: 768px) {
+  .testimonials .quote-icon-left {
+    left: 310px; /* Positionner l'icône à gauche à 150px */
+    transform: translateY(-50%) scaleX(-1); /* Inverser horizontalement */
+  }
+
+  .testimonials .quote-icon-right {
+    right: 310px; /* Positionner l'icône à droite à 150px */
+    transform: translateY(-50%);
+  }
+}
+.contact-modal-dialog {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.contact-modal-dialog.modal-showing {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.contact-modal-dialog.modal-hidden {
+  opacity: 0;
+  transform: scale(0.95);
+}
+/* FAQ Section */
+.faq.section {
+  padding: 60px 0;
+  background-color: #f8f9fa; /* Fond clair */
+}
+
+.faq .content h3 {
+  font-size: 2rem;
+  color: #333;
+  font-weight: bold;
+}
+
+.faq .content p {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+.faq-container .faq-item {
+  background-color: #ffffff;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+/* Survol de l'élément FAQ */
+.faq-container .faq-item:hover {
+  background-color: #f1f1f1;
+}
+
+/* Style pour les questions (numérotation et texte de la question) */
+.faq-container .faq-item h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffa500;
+}
+
+/* Style dynamique pour les numéros de question */
+.faq-container .faq-item h3 .num {
+  font-weight: bold;
+  color: #ffa500; /* Couleur gris/noir par défaut */
+  transition: color 0.3s ease;
+}
+
+/* Survol du texte de la question */
+.faq-container .faq-item h3:hover .question-text {
+  color: #ffa500; /* Couleur orange au survol */
+}
+
+/* Lorsque la question est ouverte, la couleur de la question devient #FFA500 */
+.faq-container .faq-item h3 .question-text.opened {
+  color: #ffa500; /* Orange lorsque la réponse est ouverte */
+}
+
+/* Lorsque la flèche tourne au clic, on applique une rotation */
+.faq-container .faq-item .faq-toggle {
+  font-size: 1.5rem;
+  color: #333;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+/* Lorsque la question est ouverte, la flèche tourne */
+.faq-container .faq-item .faq-toggle.opened {
+  transform: rotate(90deg); /* Rotation de la flèche */
+}
+
+/* Contenu des réponses */
+.faq-container .faq-item .faq-content p {
+  font-size: 1rem;
+  color: #333;
+}
+/* .invisible {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+} */
+/* Ajoutez cette classe pour rendre le titre sticky */
+.faq-title {
+  position: -webkit-sticky; /* Pour les navigateurs Webkit (Safari) */
+  position: sticky;
+  top: 0;
+  background-color: #fff; /* Couleur de fond pour ne pas cacher derrière d'autres éléments */
+  padding: 15px;
+  z-index: 1000; /* S'assurer que le titre reste au-dessus des autres éléments */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ajoutez une légère ombre pour le contraste */
+}
+
+/* Ajouter un espace pour compenser la hauteur du titre sticky */
+.faq-container {
+  margin-top: 60px; /* Ajustez en fonction de la hauteur de votre titre sticky */
+}
+
+/* Assurez-vous que les questions et réponses se comportent bien au niveau de la taille */
+.faq-item {
+  margin-bottom: 15px;
+}
+
+/* Pour la transition d'animation, on ajoute un léger changement d'effet pour rendre les FAQ plus visibles */
+.faq-content {
+  transition: opacity 0.3s ease;
+}
+.why-work-container {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.why-work-container:hover {
+  background-color: #007bff; /* Changer la couleur du fond lors du hover */
+  color: white; /* Changer la couleur du texte lors du hover */
+}
+
+.why-work-container h3,
+.why-work-container p {
+  margin-bottom: 10px;
+}
+.col-lg-6 img {
+  max-width: 80%; /* Ajuster l'image pour qu'elle prenne tout l'espace disponible */
+  height: auto;
+}
+/*--------------------------------------------------------------
+# Global Section Titles
+--------------------------------------------------------------*/
+.section-title {
+  padding-bottom: 60px;
+  position: relative;
+}
+
+.section-title h2 {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0;
+  line-height: 1px;
+  margin: 0;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--default-color), transparent 50%);
+  position: relative;
+}
+
+.section-title h2::after {
+  content: "";
+  width: 120px;
+  height: 1px;
+  display: inline-block;
+  background: var(--accent-color);
+  margin: 4px 10px;
+}
+
+.section-title p {
+  color: var(--heading-color);
+  margin: 0;
+  font-size: 36px;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-family: var(--heading-font);
+}
+
+@media (max-width: 768px) {
+  .section-title p {
+    font-size: 24px;
+  }
+}
+
+/*--------------------------------------------------------------
+# About Section
+--------------------------------------------------------------*/
+.about h3 {
+  font-weight: 700;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.about .fst-italic {
+  color: color-mix(in srgb, var(--default-color), var(--contrast-color) 50%);
+}
+
+.about .content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.about .content ul li {
+  padding: 0 0 10px 30px;
+  position: relative;
+}
+
+.about .content ul i {
+  position: absolute;
+  font-size: 20px;
+  left: 0;
+  top: -3px;
+  color: var(--accent-color);
+}
+
+.about .content p:last-child {
+  margin-bottom: 0;
+}
+
+.about .pulsating-play-btn {
+  position: absolute;
+  /* left: calc(50% - 47px);
+  top: calc(50% - 47px); */
+}
+
+/*--------------------------------------------------------------
+# Featured Section
+--------------------------------------------------------------*/
+.featured .img {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.featured .img img {
+  transition: 0.6s;
+}
+
+.featured .details {
+  background: color-mix(in srgb, var(--surface-color), transparent 5%);
+  padding: 50px 30px;
+  margin: -100px 30px 0 30px;
+  transition: all ease-in-out 0.3s;
+  position: relative;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0px 0 25px rgba(0, 0, 0, 0.1);
+}
+
+.featured .details .icon {
+  margin: 0;
+  width: 72px;
+  height: 72px;
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  border: 6px solid var(--contrast-color);
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  font-size: 28px;
+  transition: ease-in-out 0.3s;
+  position: absolute;
+  top: -36px;
+  left: calc(50% - 36px);
+}
+
+.featured .details h3 {
+  font-weight: 700;
+  margin: 10px 0 15px 0;
+  font-size: 22px;
+  transition: ease-in-out 0.3s;
+}
+
+.featured .details p {
+  color: color-mix(in srgb, var(--default-color), transparent 10%);
+  line-height: 24px;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+.featured .featured-item:hover .details h3 {
+  color: var(--accent-color);
+}
+
+.featured .featured-item:hover .details .icon {
+  background: var(--surface-color);
+  border: 2px solid var(--accent-color);
+}
+
+.featured .featured-item:hover .details .icon i {
+  color: var(--accent-color);
+}
+
+.featured .featured-item:hover .img img {
+  transform: scale(1.2);
+}
+
+/*--------------------------------------------------------------
+# Features Section
+--------------------------------------------------------------*/
+.features .container {
+  margin-top: 60px;
+}
+
+.features .nav-tabs {
+  border: none;
+  border-radius: 8px;
+}
+
+.features .nav-item {
+  flex: 1;
+  text-align: center;
+}
+
+/* .features .nav-link {
+  padding: 10px 15px;
+  font-weight: 600;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: var(--default-color);
+  border: 1px solid var(--border-color);
+  transition: 0.3s;
+} */
+
+/* .features .nav-link:hover {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+} */
+
+.features .tab-content {
+  margin-top: 30px;
+}
+
+.features .tab-pane img {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.features .tab-pane h3 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.features .tab-pane ul {
+  padding: 0;
+  list-style: none;
+}
+
+.features .tab-pane ul li {
+  padding-left: 20px;
+  position: relative;
+}
+
+.features .tab-pane ul i {
+  position: absolute;
+  left: 0;
+  top: 4px;
+  color: var(--accent-color);
+}
+
+.features .tab-pane p {
+  color: var(--heading-color);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .features .tab-pane h3 {
+    font-size: 24px;
+  }
+
+  .features .tab-pane p {
+    font-size: 14px;
+  }
+}
+/* .features .nav-link {
+    font-size: 14px;
+  } */
+/* }
+.features .nav-link:hover {
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+} */
+/* .features .nav-link.active {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  border-color: var(--accent-color);
+} */
+/* Couleurs personnalisées */
+:root {
+  --accent-color: #ff7a00; /* Exemple de couleur orange */
+  --contrast-color: #fff; /* Couleur contrastée pour le texte */
+  --gray-color: #f4f4f4; /* Gris pour l'arrière-plan */
+}
+
+/* Styles pour la section Featured Services */
+/* .features .nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 12px 20px;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  background-color: transparent;
+  color: var(--accent-color);
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+} */
+
+/* .features .nav-link i {
+  font-size: 48px;
+  margin-right: 15px;
+  transition: all 0.3s ease;
+} */
+
+/* Au survol : changement de couleur de la bordure et de l'icône */
+/* .features .nav-link:hover {
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+} */
+
+/* .features .nav-link:hover i {
+  color: var(--accent-color);
+} */
+
+/* Lorsque l'élément est actif (au clic) */
+/* .features .nav-link.active {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  border-color: var(--accent-color);
+} */
+
+/* .features .nav-link.active i {
+  color: #c81a1a;
+} */
+
+/* Styles pour la section About et le bouton vidéo */
+/* #about .glightbox {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+#about .glightbox::after {
+  content: "\f04b"; /* Icône play (font awesome) */
+/* font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 30px;
+  color: var(--contrast-color);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease; */
+/* } */
+*/
+
+/* Effet au survol du bouton vidéo */
+#about .glightbox:hover {
+  background-color: #ff6f00;
+}
+
+#about .glightbox:hover::after {
+  color: var(--contrast-color);
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* Animation sur la section Featured Services */
+/* .features .nav-link i {
+  transition: transform 0.3s ease;
+} */
+
+/* Lors du survol de la nav-link, agrandir l'icône */
+/* .features .nav-link:hover i {
+  transform: scale(1.2);
+} */
+
+/* Styles pour les cases de la section Featured */
+.featured-item .details {
+  padding: 20px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.featured-item:hover .details {
+  background-color: var(--gray-color);
+  border-color: var(--accent-color);
+}
+
+.featured-item .icon {
+  font-size: 30px;
+  color: var(--accent-color);
+  transition: color 0.3s ease;
+}
+
+.featured-item:hover .icon {
+  color: var(--accent-color);
+}
+
+/* Ajout de padding et de marges pour que les éléments ne soient pas trop proches */
+.featured-item .details h3 {
+  font-size: 18px;
+  margin-top: 15px;
+}
+
+.featured-item .details p {
+  font-size: 14px;
+  margin-top: 10px;
+}
+/* Styles pour la section Featured Services */
+/* .features .nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 12px 20px;
+  border: 2px solid var(--accent-color); /* Bordure visible par défaut, couleur de texte */
+/* border-radius: 8px;
+  background-color: transparent;
+  color: var(--accent-color);
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.3s ease; */
+/* position: relative; /* Nécessaire pour les ombres */
+/* margin: 8px; Espacement uniforme entre les nav-links */
+/* } */
+
+/* Styles pour l'icône dans le nav-link */
+/* .features .nav-link i { */
+/* font-size: 24px;
+  margin-right: 12px;
+  transition: all 0.3s ease;
+} */
+
+/* Effet au survol : bordure orange, ombre et icône orange */
+.features .nav-link:hover {
+  /* color: var(--accent-color); /* Le texte reste orange */
+  /* border-color: var(--accent-color); /* Bordure devient orange */
+  /* box-shadow: 0 4px 8px rgba(255, 122, 0, 0.4); /* Ombre orange */
+  /* } */
+
+  /* .features .nav-link:hover i {
+  color: var(--accent-color); /* Icône devient orange au survol */
+  /* } */
+
+  /* Lors du clic (élément actif) : fond orange, texte et icône blancs */
+  /* .features .nav-link.active {
+  background-color: var(--accent-color); /* Fond orange */
+  color: var(--contrast-color); /* Texte blanc */
+  border-color: var(--accent-color); /* Bordure orange */
+  box-shadow: 0 4px 8px rgba(255, 122, 0, 0.4); /* Ombre orange */
+}
+*/
+
+/* .features .nav-link.active i {
+  color: var(--contrast-color); /* Icône devient blanche au clic */
+/* background-color: var(--accent-color); /* Fond orange pour l'icône */
+/* } */
+
+/* Animation sur la section Featured Services */
+/* .features .nav-link i {
+  transition: transform 0.3s ease;
+} */
+
+/* Lors du survol de la nav-link, agrandir l'icône */
+/* .features .nav-link:hover i {
+  transform: scale(1.2);
+} */
+
+/* Quand on perd le focus (focus visible après le clic), garder la bordure orange et ombre */
+.features .nav-link:focus {
+  outline: none; /* Supprimer l'outline par défaut */
+  border-color: var(--accent-color); /* Bordure orange */
+  box-shadow: 0 4px 8px rgba(255, 122, 0, 0.4); /* Ombre orange */
+}
+/* Container du bouton pour le positionner correctement */
+.position-relative {
+  position: relative;
+  text-align: center;
+}
+
+/* Style pour le bouton avec la flèche */
+.pulsating-play-btn {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  background-color: orange;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  line-height: 80px;
+  font-size: 40px;
+  color: white;
+  text-decoration: none;
+  box-shadow: 0 0 10px rgba(255, 165, 0, 0.5); /* Ombre pour l'effet */
+  animation: pulsate 1.5s infinite;
+  z-index: 10;
+}
+
+/* Flèche blanche fixe */
+.pulsating-play-btn .arrow {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 20px solid white; /* Flèche vers le haut en blanc */
+}
+
+/* Animation d'explosion circulaire */
+.pulsating-play-btn:before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 100%;
+  height: 100%;
+  border: 2px solid orange;
+  border-radius: 50%;
+  animation: explode 1s ease-out infinite; /* Animation continue */
+  pointer-events: none; /* Le cercle ne bloque pas l'interaction */
+}
+
+/* Animation pour faire pulsar le bouton */
+@keyframes pulsate {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* Animation pour l'explosion circulaire */
+@keyframes explode {
+  0% {
+    transform: scale(0.8); /* Début de l'explosion au niveau du cercle */
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.4); /* Explosion qui s'étend autour du bouton */
+    opacity: 0.6; /* Légère diminution de l'opacité pour simuler l'expansion */
+  }
+  100% {
+    transform: scale(2); /* Explosion complète, cercle deux fois plus grand */
+    opacity: 0; /* Disparition de l'effet */
+  }
+}
+
+/* Effet d'explosion et de changement de couleur au survol */
+.pulsating-play-btn:hover {
+  background-color: white; /* Le cercle devient blanc au survol */
+  color: orange; /* Le texte (flèche) devient orange au survol */
+}
+
+/* Effet d'explosion avec changement de couleur au survol */
+.pulsating-play-btn:hover:before {
+  border-color: white; /* Le cercle d'explosion devient blanc au survol */
+  animation: none; /* L'animation d'explosion s'arrête au survol */
+}
+.about .pulsating-play-btn {
+  position: absolute;
+  /* left: calc(50% - 47px);
+  top: calc(50% - 47px); */
+}
+.pulsating-play-btn {
+  width: 94px;
+  height: 94px;
+  background: radial-gradient(
+    var(--accent-color) 50%,
+    color-mix(in srgb, var(--accent-color), transparent 75%) 52%
+  );
+  border-radius: 50%;
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: 0.3s;
+}
+a {
+  color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
+  text-decoration: underline;
+}
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+[data-aos].aos-animate {
+  pointer-events: auto;
+}
+/* .features .nav-link.active {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  border-color: var(--accent-color);
+} */
+/* Style de base pour le bouton nav-link */
+.features .nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 10px;
+  background-color: #333; /* Gris foncé de base */
+  color: #fff; /* Texte blanc par défaut */
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  border: 2px solid #333; /* Bordure gris foncé */
+  transition: all 0.3s ease;
+  text-align: center;
+  width: 100%;
+}
+
+/* Style pour l'icône */
+.features .nav-link i {
+  font-size: 48px; /* Icône de 48px */
+  margin-right: 15px;
+  color: #fff; /* Icône blanche */
+  transition: all 0.3s ease;
+}
+
+/* Style pour le texte */
+.features .nav-link h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff; /* Texte blanc */
+  transition: all 0.3s ease;
+}
+
+/* Au survol : changement de couleur de l'icône et de la bordure */
+.features .nav-link:hover {
+  border-color: #ff7a00; /* Bordure orange */
+  background-color: #444; /* Gris foncé légèrement plus clair */
+}
+
+.features .nav-link:hover i {
+  color: #ff7a00; /* Icône orange au survol */
+}
+
+.features .nav-link:hover h4 {
+  color: #ff7a00; /* Texte orange au survol */
+}
+
+/* Lorsque l'élément est actif (au clic) : fond orange et texte/icône blanc */
+.features .nav-link.active {
+  background-color: #ff7a00; /* Fond orange */
+  color: #fff; /* Texte blanc */
+  border-color: #ff7a00; /* Bordure orange */
+}
+
+.features .nav-link.active i {
+  color: #444444; /* Icône blanche au clic */
+}
+
+.features .nav-link.active h4 {
+  color: #444444; /* Texte blanc au clic */
+}
+.service-card {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.service-card .content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  height: 300px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.service-card .image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 1;
+  z-index: -1;
+}
+
+.service-card .icon {
+  margin-bottom: 10px;
+}
+
+.service-card .icon img {
+  width: 75px;
+  height: 75px;
+  position: relative;
+  top: -50%;
+  z-index: 2;
+}
+
+/* Button Styles */
+.btn-learn-more {
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 20px;
+  background-color: #ffa500;
+  padding: 8px 16px;
+  border-radius: 25px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.btn-learn-more:hover {
+  background-color: #ff6600;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .service-card .content {
+    height: auto;
+    min-height: 250px;
+    padding-bottom: 60px;
+  }
+
+  .btn-learn-more {
+    position: relative;
+    bottom: -30px;
+    width: 80%;
+    max-width: 200px;
+    padding: 10px 20px;
+    margin: 0 auto;
+    display: block;
+    transform: none;
+    left: auto;
+  }
+
+  .service-card {
+    padding-bottom: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .service-card .content {
+    min-height: 200px;
+  }
+
+  .btn-learn-more {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .service-card .icon img {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+/*parentalité*/
+
+.services .services-item {
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  padding: 10px 0;
+  position: relative;
+}
+
+.services-content::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 0;
+  top: 0;
+  left: 0;
+  border-radius: 10px 10px 0 0;
+  background: rgba(3, 43, 243, 0.8);
+  transition: 0.5s;
+}
+
+.services-content::after {
+  top: 0;
+  bottom: auto;
+  border-radius: 10px 10px 10px 10px;
+}
+
+.services-item:hover .services-content::after {
+  height: 100%;
+  opacity: 1;
+  transition: 0.5s;
+}
+
+.services-item:hover .services-content-icon {
+  position: relative;
+  z-index: 2;
+}
+
+.services-item .services-content-icon i,
+.services-item .services-content-icon p {
+  transition: 0.5s;
+}
+
+.services-item:hover .services-content-icon i {
+  color: var(--bs-secondary) !important;
+}
+
+.services-item:hover .services-content-icon p {
+  color: var(--bs-white);
+}
+
+/*** Services End ***/
+
+/*** Project Start ***/
+
+.project-img {
+  position: relative;
+  padding: 15px;
+}
+
+.project-img::before {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  top: 0;
+  left: 0;
+  background: var(--bs-secondary);
+  border-radius: 10px;
+  opacity: 1;
+  z-index: -1;
+  transition: 0.5s;
+}
+
+.project-img::after {
+  content: "";
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background: var(--bs-primary);
+  border-radius: 10px;
+  opacity: 1;
+  z-index: -1;
+  transition: 0.5s;
+}
+
+.project-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+}
+
+.project-content a {
+  display: inline-block;
+  padding: 20px 25px;
+  background: var(--bs-primary);
+  border-radius: 10px;
+}
+
+.project-item:hover .project-content {
+  opacity: 1;
+  transition: 0.5s;
+}
+
+.project-item:hover .project-img::before,
+.project-item:hover .project-img::after {
+  opacity: 0;
 }

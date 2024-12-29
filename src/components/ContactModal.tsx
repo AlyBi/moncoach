@@ -56,38 +56,39 @@ interface ContactModalProps {
     onClose: () => void;
 }
 
-const ContactModal = ({ show, message, onClose }: ContactModalProps) => {
-    const [loading, setLoading] = useState(true);
-    const navigate = useNavigate(); // Initialise la fonction de navigation pour la redirection
+const ContactModal = React.memo(({ show, message, onClose }: ContactModalProps) => {
+    const [loading, setLoading] = useState(true); // Pour afficher "Chargement..." pendant un certain temps
+    const navigate = useNavigate(); // Pour la redirection après la fermeture de la modal
 
     useEffect(() => {
         if (show) {
+            // Simule l'envoi du message avec un délai de 2 secondes
             const timer = setTimeout(() => {
-                setLoading(false);
-                onClose();  // Ferme la modal après 2 secondes
-                navigate('/');  // Redirige vers l'accueil
-            }, 2000);  // Délai de 2 secondes avant fermeture et redirection
+                setLoading(false); // On désactive l'état de chargement
+                // Attendre encore 1 seconde avant de fermer la modal et rediriger
+                setTimeout(() => {
+                    onClose();  // Fermer la modal
+                    navigate('/');  // Rediriger vers l'accueil
+                }, 1000); // Délai de fermeture de la modal (1 seconde après l'envoi)
+            }, 2000); // Simule un délai de 2 secondes pour "l'envoi" du message
 
             // Nettoyage du timer si la modal est fermée avant 2 secondes
             return () => clearTimeout(timer);
         }
-    }, [show, onClose, navigate]); // Déclenche l'effet lorsque "show" change
+    }, [show, onClose, navigate]);
 
     return (
         <Modal show={show} onHide={onClose} backdrop="static" keyboard={false} dialogClassName="contact-modal-dialog">
             {loading ? (
-                <div className="loading-indicator">Chargement...</div>
+                <div className="loading-indicator">Chargement...</div> // Affiche l'indicateur de chargement
             ) : (
                 <>
-                    {/* Modal Header avec un fond en dégradé */}
                     <Modal.Header closeButton className="contact-modal-header">
                         <Modal.Title>Message concernant votre demande</Modal.Title>
                     </Modal.Header>
-                    {/* Contenu de la modal */}
                     <Modal.Body className="contact-modal-body">
                         {message}
                     </Modal.Body>
-                    {/* Footer de la modal avec le bouton de fermeture */}
                     <Modal.Footer>
                         <Button variant="secondary" onClick={onClose} className="contact-modal-close-button">
                             Fermer
@@ -97,6 +98,6 @@ const ContactModal = ({ show, message, onClose }: ContactModalProps) => {
             )}
         </Modal>
     );
-};
+});
 
 export default ContactModal;

@@ -84,7 +84,8 @@
 
 // export default Pricing;
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+
 
 const Pricing: React.FC = () => {
     const [selectedPlan, setSelectedPlan] = useState('Business Plan');
@@ -120,7 +121,9 @@ const Pricing: React.FC = () => {
                     <h1 className="mb-2 mb-lg-0">Prix</h1>
                     <nav className="breadcrumbs">
                         <ol>
-                            <li><a href="/">Accueil</a></li>
+                            <li>
+                                <NavLink to="index.html">Accueil</NavLink>
+                            </li>
                             <li className="current">Prix</li>
                         </ol>
                     </nav>
@@ -143,7 +146,7 @@ const Pricing: React.FC = () => {
                                 <h3>Free Plan</h3>
                                 <p className="description">Uater</p>
                                 <h4><sup>$</sup>0<span> / month</span></h4>
-                                <Link to="/" className={`cta-btn ${selectedPlan === 'Free Plan' || hoveredPlan === 'Free Plan' ? 'btn-orange' : 'btn-gray'}`} onClick={() => handleSelectPlan('Free Plan')}>Select</Link>
+                                <NavLink to="/" className={`cta-btn ${selectedPlan === 'Free Plan' || hoveredPlan === 'Free Plan' ? 'btn-orange' : 'btn-gray'}`} onClick={() => handleSelectPlan('Free Plan')}>Select</NavLink>
                                 <p className="text-center small">No cred</p>
                                 <ul>
                                     <li><i className="bi bi-check"></i> <span>Qua</span></li>
@@ -170,7 +173,7 @@ const Pricing: React.FC = () => {
                                 <h3>Business Plan</h3>
                                 <p className="description">x strater</p>
                                 <h4><sup>$</sup>29<span> / month</span></h4>
-                                <Link to="/" className={`cta-btn ${selectedPlan === 'Business Plan' || hoveredPlan === 'Business Plan' ? 'btn-orange' : 'btn-gray'}`} onClick={() => handleSelectPlan('Business Plan')}>Select</Link>
+                                <NavLink to="/" className={`cta-btn ${selectedPlan === 'Business Plan' || hoveredPlan === 'Business Plan' ? 'btn-orange' : 'btn-gray'}`} onClick={() => handleSelectPlan('Business Plan')}>Select</NavLink>
                                 <p className="text-center small">No </p>
                                 <ul>
                                     <li><i className="bi bi-check"></i> <span>Quam </span></li>
@@ -196,7 +199,7 @@ const Pricing: React.FC = () => {
                                 <h3>Developer Plan</h3>
                                 <p className="description">rater</p>
                                 <h4><sup>$</sup>49<span> / month</span></h4>
-                                <Link to="/" className={`cta-btn ${selectedPlan === 'Developer Plan' || hoveredPlan === 'Developer Plan' ? 'btn-orange' : 'btn-gray'}`} onClick={() => handleSelectPlan('Developer Plan')}>Select</Link>
+                                <NavLink to="/" className={`cta-btn ${selectedPlan === 'Developer Plan' || hoveredPlan === 'Developer Plan' ? 'btn-orange' : 'btn-gray'}`} onClick={() => handleSelectPlan('Developer Plan')}>Select</NavLink>
                                 <p className="text-center small">No d</p>
                                 <ul>
                                     <li><i className="bi bi-check"></i> <span>Quam </span></li>

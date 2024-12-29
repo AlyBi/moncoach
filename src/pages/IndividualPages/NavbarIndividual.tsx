@@ -208,19 +208,32 @@
 // export default Navbar;
 import React, { useState, useEffect } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
+import { NavDropdown } from 'react-bootstrap';
 import { Modal } from 'react-bootstrap';
-import logo from '../../assets/img/logo6.png';
+import logo from '../../assets/img/logooo.jpg';
 import { InlineWidget } from 'react-calendly';
-import { useAppContext } from '../../AppContext';
-// import './Navbar.css'; // Importer le fichier CSS
 
-const Navbar: React.FC = () => {
-    const { userType } = useAppContext();
+const Navbars: React.FC = () => {
+
     const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-    const [openDropdown, setOpenDropdown] = useState<string>('');
+    const [dropdownOpen, setDropdownOpen] = useState<string>(''); // Utilisation d'un état pour chaque dropdown
     const [isMobile, setIsMobile] = useState<boolean>(false);
     const [showModal, setShowModal] = useState(false);
     const navigate = useNavigate();
+
+    const handleMouseEnter = (dropdown: string) => {
+        setDropdownOpen(dropdown); // Ouvre le menu pour un dropdown spécifique
+    };
+
+    const handleMouseLeave = () => {
+        setDropdownOpen(''); // Ferme tous les dropdowns
+    };
+
+    const handleClick = (e: React.MouseEvent, navigateTo: string) => {
+        e.preventDefault(); // Empêche la navigation par défaut
+        setDropdownOpen(''); // Ferme le dropdown
+        navigate(navigateTo); // Effectue la navigation manuellement
+    };
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -232,10 +245,12 @@ const Navbar: React.FC = () => {
         document.body.classList.remove('mobile-nav-active');
     };
 
-    const toggleDropdown = (dropdown: string, e: React.MouseEvent) => {
-        e.preventDefault();
-        setOpenDropdown(openDropdown === dropdown ? '' : dropdown);
+    const handleLogoClick = () => {
+        navigate('/individual');
     };
+
+    const handleCloseModal = () => setShowModal(false);
+    const handleShowModal = () => setShowModal(true);
 
     useEffect(() => {
         const handleResize = () => {
@@ -248,17 +263,6 @@ const Navbar: React.FC = () => {
             window.removeEventListener('resize', handleResize);
         };
     }, []);
-
-    const handleLogoClick = () => {
-        if (userType === 'company') {
-            navigate('/company');
-        } else {
-            navigate('/individual');
-        }
-    };
-
-    const handleCloseModal = () => setShowModal(false);
-    const handleShowModal = () => setShowModal(true);
 
     return (
         <header id="header" className="header d-flex align-items-center sticky-top">
@@ -276,30 +280,37 @@ const Navbar: React.FC = () => {
                             </NavLink>
                         </li>
 
-                        <li className={`dropdown ${openDropdown === 'about' ? 'open' : ''}`}>
-                            <NavLink to="#" onClick={(e) => toggleDropdown('about', e)}>
-                                <span className={`${openDropdown === 'about' ? 'open-link' : ''}`}>À propos</span>
-                                <i className={`bi bi-chevron-down toggle-dropdown ${openDropdown === 'about' ? 'rotate-chevron' : ''}`}></i>
-                            </NavLink>
-                            <ul className={`${openDropdown === 'about' ? 'dropdown-active' : ''}`}>
-                                <li><NavLink to="/team" onClick={closeMenu}>Equipe</NavLink></li>
-                                <li><NavLink to="/testimonials" onClick={closeMenu}>Temoignages</NavLink></li>
-                            </ul>
+                        {/* Dropdown "À propos" */}
+                        <li>
+                            <NavDropdown
+                                title="À propos"
+                                id="about-nav-dropdown"
+                                show={dropdownOpen === 'about'}
+                                onMouseEnter={() => handleMouseEnter('about')}
+                                onMouseLeave={handleMouseLeave}
+                            >
+                                <NavDropdown.Item as={NavLink} to="/teams" onClick={(e) => handleClick(e, '/team')}>Equipe</NavDropdown.Item>
+                                <NavDropdown.Item as={NavLink} to="/testimonials" onClick={(e) => handleClick(e, '/testimonials')}>Temoignages</NavDropdown.Item>
+                                <NavDropdown.Item as={NavLink} to="/portfolio" onClick={(e) => handleClick(e, '/portfolio')}>Portfolio</NavDropdown.Item>
+                            </NavDropdown>
                         </li>
 
-                        {/* Menu des prestations avec sous-menus */}
-                        <li className={`dropdown ${openDropdown === 'prestations' ? 'open' : ''}`}>
-                            <NavLink to="#" onClick={(e) => toggleDropdown('prestations', e)}>
-                                <span className={`${openDropdown === 'prestations' ? 'open-link' : ''}`}>Prestations</span>
-                                <i className={`bi bi-chevron-down toggle-dropdown ${openDropdown === 'prestations' ? 'rotate-chevron' : ''}`}></i>
-                            </NavLink>
-                            <ul className={`${openDropdown === 'prestations' ? 'dropdown-active' : ''}`}>
-                                <li><NavLink to="/prestations" onClick={closeMenu}>Formations</NavLink></li>
-                                <li><NavLink to="/accompagnement-personnalise" onClick={closeMenu}>Accompagnement personnalisé</NavLink></li>
-                                <li><NavLink to="/parcours-accompagnement" onClick={closeMenu}>Parcours d'accompagnement</NavLink></li>
-                            </ul>
+                        {/* Dropdown "Prestations" */}
+                        <li>
+                            <NavDropdown
+                                title="Prestations"
+                                id="prestations-nav-dropdown"
+                                show={dropdownOpen === 'prestations'}
+                                onMouseEnter={() => handleMouseEnter('prestations')}
+                                onMouseLeave={handleMouseLeave}
+                            >
+                                <NavDropdown.Item as={NavLink} to="/formation" onClick={(e) => handleClick(e, '/formation')}>Formation</NavDropdown.Item>
+                                <NavDropdown.Item as={NavLink} to="/Coaching" onClick={(e) => handleClick(e, '/coaching')}>Accompagnement personnalisé</NavDropdown.Item>
+                                <NavDropdown.Item as={NavLink} to="/CoachingJourney" onClick={(e) => handleClick(e, '/coachingJourney')}>Parcours d'accompagnement</NavDropdown.Item>
+                            </NavDropdown>
                         </li>
-                        <li><NavLink to="/portfolio" onClick={closeMenu}>Portfolio</NavLink></li>
+
+                        {/* Autres liens */}
                         <li><NavLink to="/pricing" onClick={closeMenu}>Prix</NavLink></li>
                         <li><NavLink to="/blog" onClick={closeMenu}>Blog</NavLink></li>
                         <li><NavLink to="/contact" onClick={closeMenu}>Contact</NavLink></li>
@@ -331,4 +342,4 @@ const Navbar: React.FC = () => {
     );
 };
 
-export default Navbar;
+export default Navbars;

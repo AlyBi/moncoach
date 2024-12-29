@@ -157,8 +157,8 @@
 
 // export default Contact;
 
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import de useNavigate pour la redirection
+import React, { useState, useEffect, useCallback } from 'react';
+import { useNavigate, NavLink } from 'react-router-dom'; // Import de useNavigate et NavLink pour la redirection
 import ContactModal from './ContactModal';  // Le composant modal pour les réponses
 import NewsletterModal from './NewsletterModal'; // Si tu as une autre modal spécifique pour newsletter
 
@@ -173,11 +173,15 @@ const Contact = () => {
     const navigate = useNavigate();  // Utilisation de useNavigate pour la redirection
 
     useEffect(() => {
-        AOS.init();
+        AOS.init({
+            once: true, // Une seule animation
+            disable: 'mobile', // Désactiver sur mobile si nécessaire
+        });
     }, []);
 
+
     // Fonction pour gérer la soumission du formulaire
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = useCallback((e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();  // Empêche le comportement par défaut du formulaire
 
         // Simulation d'un envoi réussi (ici tu peux appeler ton API ou service de soumission)
@@ -188,7 +192,7 @@ const Contact = () => {
         setTimeout(() => {
             navigate('/');  // Redirige vers l'accueil
         }, 3000);  // Temps en millisecondes avant la redirection
-    };
+    }, [navigate]);
 
     return (
         <main className="main">
@@ -199,7 +203,9 @@ const Contact = () => {
                     <h1 className="mb-2 mb-lg-0">Contact</h1>
                     <nav className="breadcrumbs">
                         <ol>
-                            <li><a href="index.html">Accueil</a></li>
+                            <li>
+                                <NavLink to="index.html">Accueil</NavLink>
+                            </li>
                             <li className="current">Contact</li>
                         </ol>
                     </nav>
@@ -215,10 +221,11 @@ const Contact = () => {
                         height="400px"
                         style={{ border: 0 }}
                         allowFullScreen
-                        loading="lazy"
+                        loading="lazy"   // Activer le chargement paresseux
                         referrerPolicy="no-referrer-when-downgrade"
                         title="Google Maps Location"
                     />
+
 
                 </div>
             </section>

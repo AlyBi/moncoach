@@ -54,32 +54,32 @@
 // const NavbarWithLocation = () => {
 //   const location = useLocation(); // Récupère l'emplacement actuel de l'URL
 //   const isCompanyRoute = location.pathname.startsWith('/company');
-//   useEffect(() => {
-//     // Lorsque l'URL change, on fait défiler la page en haut
-//     window.scrollTo(0, 0);
-//   }, [location]); // Réagir aux changements de location
-//   useEffect(() => {
-//     AOS.init();
-//     GLightbox({ selector: '.glightbox' });
-//     // Swiper.use([Navigation, Pagination]);
+// useEffect(() => {
+//   // Lorsque l'URL change, on fait défiler la page en haut
+//   window.scrollTo(0, 0);
+// }, [location]); // Réagir aux changements de location
+// useEffect(() => {
+//   AOS.init();
+//   GLightbox({ selector: '.glightbox' });
+//   // Swiper.use([Navigation, Pagination]);
 
-//     // Initialiser imagesLoaded et Isotope si nécessaire
-//     // imagesLoaded('#container', () => {
-//     //   new Isotope('#container', {
-//     //     itemSelector: '.item',
-//     //     layoutMode: 'fitRows'
-//     //   });
-//     // });
+//   // Initialiser imagesLoaded et Isotope si nécessaire
+//   // imagesLoaded('#container', () => {
+//   //   new Isotope('#container', {
+//   //     itemSelector: '.item',
+//   //     layoutMode: 'fitRows'
+//   //   });
+//   // });
 
-//     // Initialiser Waypoints
-//     // new waypoints({
-//     //   element: document.getElementById('some-element') as HTMLElement,
-//     //   handler: function (direction: string) {
-//     //     console.log('Scrolled to waypoint!', direction);
-//     //   }
-//     // });
-//   }, []);
-//   return (
+//   // Initialiser Waypoints
+//   // new waypoints({
+//   //   element: document.getElementById('some-element') as HTMLElement,
+//   //   handler: function (direction: string) {
+//   //     console.log('Scrolled to waypoint!', direction);
+//   //   }
+//   // });
+// }, []);
+// return (
 //     <>
 //       {isCompanyRoute ? <NavbarCompany /> : <NavbarIndividual />}
 //     </>
@@ -142,94 +142,123 @@
 // };
 
 // export default App;
+// src/App.tsx
+
+// src/App.tsx
+// src/App.tsx
+
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import { AppProvider, useAppContext } from './AppContext';
-import NavbarIndividual from './pages/IndividualPages/NavbarIndividual'; // Navbar pour particuliers
-import NavbarCompany from './pages/CompanyPages/NavbarCompany'; // Navbar pour entreprises
-import './index.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import NavbarIndividual from './pages/IndividualPages/NavbarIndividual';  // Navbar pour particuliers
+import CookieConsentBanner from './components/CookieConsentBanner';  // Bannière cookies
+import './index.css';  // Styles globaux
+import ParcoursDetails from './pages/IndividualPages/ParcoursDetails';
+// import HalalProject from './pages/IndividualPages/SupportRoute/HalalProject';
 import Home from './pages/IndividualPages/Home';
 import PrestationsHome from './pages/IndividualPages/PrestationsHome';
 import Portfolio from './pages/IndividualPages/Portfolio';
-import HomeCompany from './pages/CompanyPages/HomeCompany';
-import ServicesHomeCompany from './pages/CompanyPages/ServicesHomeCompany';
+import Testimonials from './pages/IndividualPages/Testimonials';
 import About from './pages/IndividualPages/About';
+import TestimonialsSimpl from './pages/IndividualPages/TestimonialsSimpl';
 import LegalNotices from './components/LegalNotices';
 import Contact from './components/Contact';
-import AboutCompany from './pages/CompanyPages/AboutCompany';
-import PortfolioCompany from './pages/CompanyPages/PortfolioCompany';
 import Pricing from './pages/IndividualPages/Pricing';
-import PricingCompany from './pages/CompanyPages/PricingCompany';
 import Blog from './pages/IndividualPages/Blog';
-import BlogCompany from './pages/CompanyPages/BlogCompany';
-import Footer from './components/Footer';
-import Overlay from './components/Overlay';
-import ScrollToTop from './components/ScrollToTop';
-import ScrollToTopButton from './components/ScrollToTopButton';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import AOS from 'aos';
-import GLightbox from 'glightbox';
-
-
-
-const NavbarWithLocation = () => {
-  const { userType } = useAppContext();
-  const location = useLocation();
-  // const navigate = useNavigate();
-
-  const isCompanyRoute = userType === 'company'; // Vérifie si l'utilisateur est une entreprise
-
-  useEffect(() => {
-    window.scrollTo(0, 0); // Fais défiler vers le haut à chaque changement d'URL
-    AOS.init();
-    GLightbox({ selector: '.glightbox' }); // Initialisation de GLightbox
-  }, [location]);
-
-  // Redirection dynamique pour les liens "Home" et le logo
-  // const handleHomeClick = () => {
-  //   navigate(isCompanyRoute ? '/company' : '/individual');
-  // };
-
-  return (
-    <>
-      {isCompanyRoute ? <NavbarCompany /> : <NavbarIndividual />}
-    </>
-  );
-};
+import Clients from './pages/IndividualPages/Clients';
+import FAQSection from './pages/IndividualPages/FAQSection';
+import Footer from './components/Footer';  // Footer global
+import Team from './pages/IndividualPages/Team'
+import Formation from './pages/IndividualPages/formationtraining/Formation';
+import EmotionalManagement from './pages/IndividualPages/formationtraining/EmotionalManagement';
+import Parenting from './pages/IndividualPages/formationtraining/Parenting';
+import EffectiveCommunication from './pages/IndividualPages/formationtraining/EffectiveCommunication';
+import Coaching from './pages/IndividualPages/PersonalizedSupport/Coaching';
+import CoachingJourney from './pages/IndividualPages/SupportRoute/CoachingJourney';
+// import Overlay from './components/Overlay';  // Overlay au démarrage
+import ScrollToTop from './components/ScrollToTop';  // Composant pour faire défiler en haut
+import ScrollToTopButton from './components/ScrollToTopButton';  // Bouton flottant de défilement
+import 'bootstrap/dist/css/bootstrap.min.css';  // Import de Bootstrap pour le style
+import AOS from 'aos';  // Animation On Scroll
+import GLightbox from 'glightbox';  // Pour les lightboxes d'images
+import Swiper from 'swiper';  // Pour les carrousels
+import { Navigation, Pagination } from 'swiper/modules';  // Modules Swiper
+import imagesLoaded from 'imagesloaded';  // Pour charger les images avant affichage
+import Isotope from 'isotope-layout';  // Pour le filtrage d'éléments
+import { AppProvider } from './AppContext';  // Import du AppProvider
 
 const App: React.FC = () => {
-  return (
-    <AppProvider>
-      <Router>
-        <Overlay /> {/* Affiche l'overlay au démarrage */}
-        <ScrollToTop /> {/* Composant ScrollToTop pour faire défiler en haut */}
-        <ScrollToTopButton /> {/* Composant ScrollToTopButton pour le bouton flottant */}
+  // Effet pour faire défiler la page en haut lorsqu'on change de route
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
-        <NavbarWithLocation /> {/* Affiche la navbar en fonction du type d'utilisateur */}
+  // Initialisation des différentes librairies au montage du composant
+  useEffect(() => {
+    // Initialiser AOS (Animate On Scroll)
+    AOS.init();
+
+    // Initialiser GLightbox pour les galeries d'images
+    GLightbox({ selector: '.glightbox' });
+
+    // Initialiser Swiper (si nécessaire, décommenter pour l'utiliser)
+    Swiper.use([Navigation, Pagination]);
+
+    // Initialiser imagesLoaded et Isotope pour la gestion d'images et filtrage
+    imagesLoaded('#container', () => {
+      new Isotope('#container', {
+        itemSelector: '.item',
+        layoutMode: 'fitRows',
+      });
+    });
+
+    // Initialiser Waypoints (si nécessaire)
+    // new Waypoint({
+    //   element: document.getElementById('some-element') as HTMLElement,
+    //   handler: function (direction?: string) {
+    //     console.log('Scrolled to waypoint!', direction);
+    //   },
+    // });
+  }, []);
+
+  return (
+    <AppProvider> {/* Enveloppez toute l'application avec AppProvider */}
+      <Router>
+        {/* <Overlay />  Affiche l'overlay au démarrage */}
+        <ScrollToTop />  {/* Composant pour faire défiler en haut */}
+        <ScrollToTopButton />  {/* Composant pour afficher le bouton flottant de défilement */}
+
+        <NavbarIndividual />  {/* Navbar pour les utilisateurs particuliers */}
+        <CookieConsentBanner />  {/* Bannière de consentement aux cookies */}
 
         <Routes>
-          {/* Routes Entreprise */}
-          <Route path="/company" element={<HomeCompany />} />
-          <Route path="/aboutCompany" element={<AboutCompany />} />
-          <Route path="/servicesCompany" element={<ServicesHomeCompany />} />
-          <Route path="/portfolioCompany" element={<PortfolioCompany />} />
-          <Route path="/pricingCompany" element={<PricingCompany />} />
-          <Route path="/blogCompany" element={<BlogCompany />} />
-
-          {/* Routes Particulier */}
+          {/* Routes spécifiques aux pages du site */}
           <Route path="/individual" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/prestations" element={<PrestationsHome />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/parcours-details" element={<ParcoursDetails />} />
+          <Route path="/testimonials" element={<Testimonials />} />
+          <Route path="/clients" element={<Clients />} />
+          <Route path="/team" element={<Team />} />
+          <Route path="/testimonialsSimpl" element={<TestimonialsSimpl />} />
+          <Route path="/faq" element={<FAQSection />} />
+          <Route path="/parcours-details/:id" element={<ParcoursDetails />} />
+          <Route path="/formation" element={<Formation />} />
+          <Route path="/EmotionalManagement" element={<EmotionalManagement />} />
+          <Route path="/Parenting" element={<Parenting />} />
+          <Route path="/EffectiveCommunication" element={<EffectiveCommunication />} />
+          <Route path="/Coaching" element={<Coaching />} />
+          <Route path="/CoachingJourney" element={<CoachingJourney />} />
 
+          {/* <Route path="/halal-project" element={<HalalProject />} /> */}
           {/* Routes générales */}
           <Route path="/legal-notices" element={<LegalNotices />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
 
-        <Footer /> {/* Footer global */}
+        <Footer />  {/* Footer global */}
       </Router>
     </AppProvider>
   );

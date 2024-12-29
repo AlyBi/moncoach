@@ -5,8 +5,10 @@ import ado from '../../assets/img/ado.jpg'; // Assurez-vous que le chemin est co
 import home5 from '../../assets/img/home5.jpg'; // Assurez-vous que le chemin est correct
 import home6 from '../../assets/img/home6.jpg';
 import About from './AboutSimpl';
-import Prestations from './PrestationsHome';
+// import Prestations from './PrestationsHome';
 import Portfolio from './PortfolioDetails';
+import TestimonialsSimpl from './TestimonialsSimpl';
+import FAQSection from './FAQSection';
 // import FloatingCalendlyButton from './FloatingCalendlyButton';
 
 const Home: React.FC = () => {
@@ -74,11 +76,13 @@ const Home: React.FC = () => {
                 </div>
             </section>
             <About />
-            <Prestations />
+            {/* <Prestations /> */}
             <Portfolio />
+            <TestimonialsSimpl />
+            <FAQSection />
             {/* <InlineWidget url="https://calendly.com/definir/prise-de-rendez-vous?" /> */}
             {/* <FloatingCalendlyButton /> */}
-        </main>
+        </main >
 
     );
 };
