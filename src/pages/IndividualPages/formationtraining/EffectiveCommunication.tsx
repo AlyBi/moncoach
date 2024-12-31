@@ -241,14 +241,14 @@
 
 // export default FeaturedSection;
 import React, { useEffect, useState } from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 // Importation des images
 import aboutImage from '../../../assets/img/about.jpg';
 import aboutImage2 from '../../../assets/img/about-2.jpg';
-import featuredImage1 from '../../../assets/img/services-1.jpg';
-import featuredImage2 from '../../../assets/img/services-2.jpg';
-import featuredImage3 from '../../../assets/img/services-3.jpg';
+// import featuredImage1 from '../../../assets/img/services-1.jpg';
+// import featuredImage2 from '../../../assets/img/services-2.jpg';
+// import featuredImage3 from '../../../assets/img/services-3.jpg';
 import workingImage1 from '../../../assets/img/working-1.jpg';
 import workingImage2 from '../../../assets/img/working-2.jpg';
 import workingImage3 from '../../../assets/img/working-3.jpg';

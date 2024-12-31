@@ -147,7 +147,7 @@
 // src/App.tsx
 // src/App.tsx
 
-import React, { useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NavbarIndividual from './pages/IndividualPages/NavbarIndividual';  // Navbar pour particuliers
 import CookieConsentBanner from './components/CookieConsentBanner';  // Bannière cookies
@@ -174,6 +174,7 @@ import Parenting from './pages/IndividualPages/formationtraining/Parenting';
 import EffectiveCommunication from './pages/IndividualPages/formationtraining/EffectiveCommunication';
 import Coaching from './pages/IndividualPages/PersonalizedSupport/Coaching';
 import CoachingJourney from './pages/IndividualPages/SupportRoute/CoachingJourney';
+import PrivacyPolicy from './components/PrivacyPolicy';
 // import Overlay from './components/Overlay';  // Overlay au démarrage
 import ScrollToTop from './components/ScrollToTop';  // Composant pour faire défiler en haut
 import ScrollToTopButton from './components/ScrollToTopButton';  // Bouton flottant de défilement
@@ -187,80 +188,83 @@ import Isotope from 'isotope-layout';  // Pour le filtrage d'éléments
 import { AppProvider } from './AppContext';  // Import du AppProvider
 
 const App: React.FC = () => {
-  // Effet pour faire défiler la page en haut lorsqu'on change de route
+  const [consentGiven, setConsentGiven] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const handleConsent = (accepted: boolean) => {
+    setConsentGiven(true);
+    // Ici, vous pouvez ajouter une logique supplémentaire basée sur l'acceptation ou le refus
+  };
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  // Initialisation des différentes librairies au montage du composant
   useEffect(() => {
-    // Initialiser AOS (Animate On Scroll)
-    AOS.init();
+    if (consentGiven) {
+      // Initialiser les librairies seulement après le consentement
+      AOS.init();
+      GLightbox({ selector: '.glightbox' });
+      Swiper.use([Navigation, Pagination]);
 
-    // Initialiser GLightbox pour les galeries d'images
-    GLightbox({ selector: '.glightbox' });
-
-    // Initialiser Swiper (si nécessaire, décommenter pour l'utiliser)
-    Swiper.use([Navigation, Pagination]);
-
-    // Initialiser imagesLoaded et Isotope pour la gestion d'images et filtrage
-    imagesLoaded('#container', () => {
-      new Isotope('#container', {
-        itemSelector: '.item',
-        layoutMode: 'fitRows',
-      });
-    });
-
-    // Initialiser Waypoints (si nécessaire)
-    // new Waypoint({
-    //   element: document.getElementById('some-element') as HTMLElement,
-    //   handler: function (direction?: string) {
-    //     console.log('Scrolled to waypoint!', direction);
-    //   },
-    // });
-  }, []);
+      if (containerRef.current) {
+        imagesLoaded(containerRef.current, () => {
+          if (containerRef.current) {
+            new Isotope(containerRef.current, {
+              itemSelector: '.item',
+              layoutMode: 'fitRows',
+            });
+          }
+        });
+      }
+    }
+  }, [consentGiven]);
 
   return (
-    <AppProvider> {/* Enveloppez toute l'application avec AppProvider */}
+    <AppProvider>
       <Router>
-        {/* <Overlay />  Affiche l'overlay au démarrage */}
-        <ScrollToTop />  {/* Composant pour faire défiler en haut */}
-        <ScrollToTopButton />  {/* Composant pour afficher le bouton flottant de défilement */}
+        <div className={`App ${!consentGiven ? 'blurred' : ''}`}>
+          <CookieConsentBanner onConsent={handleConsent} />
+          {consentGiven && (
+            <>
+              <ScrollToTop />
+              <ScrollToTopButton />
+              <NavbarIndividual />
+              <Routes>
+                {/* Routes spécifiques aux pages du site */}
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/prestations" element={<PrestationsHome />} />
+                <Route path="/portfolio" element={<Portfolio />} />
+                <Route path="/pricing" element={<Pricing />} />
+                <Route path="/blog" element={<Blog />} />
+                <Route path="/parcours-details" element={<ParcoursDetails />} />
+                <Route path="/testimonials" element={<Testimonials />} />
+                <Route path="/clients" element={<Clients />} />
+                <Route path="/team" element={<Team />} />
+                <Route path="/testimonialsSimpl" element={<TestimonialsSimpl />} />
+                <Route path="/faq" element={<FAQSection />} />
+                <Route path="/parcours-details/:id" element={<ParcoursDetails />} />
+                <Route path="/formation" element={<Formation />} />
+                <Route path="/EmotionalManagement" element={<EmotionalManagement />} />
+                <Route path="/Parenting" element={<Parenting />} />
+                <Route path="/EffectiveCommunication" element={<EffectiveCommunication />} />
+                <Route path="/Coaching" element={<Coaching />} />
+                <Route path="/CoachingJourney" element={<CoachingJourney />} />
+                <Route path="/privacy" element={<PrivacyPolicy />} />
 
-        <NavbarIndividual />  {/* Navbar pour les utilisateurs particuliers */}
-        <CookieConsentBanner />  {/* Bannière de consentement aux cookies */}
+                {/* <Route path="/halal-project" element={<HalalProject />} /> */}
+                {/* Routes générales */}
+                <Route path="/legal-notices" element={<LegalNotices />} />
+                <Route path="/contact" element={<Contact />} />
+              </Routes>
 
-        <Routes>
-          {/* Routes spécifiques aux pages du site */}
-          <Route path="/individual" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/prestations" element={<PrestationsHome />} />
-          <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/pricing" element={<Pricing />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/parcours-details" element={<ParcoursDetails />} />
-          <Route path="/testimonials" element={<Testimonials />} />
-          <Route path="/clients" element={<Clients />} />
-          <Route path="/team" element={<Team />} />
-          <Route path="/testimonialsSimpl" element={<TestimonialsSimpl />} />
-          <Route path="/faq" element={<FAQSection />} />
-          <Route path="/parcours-details/:id" element={<ParcoursDetails />} />
-          <Route path="/formation" element={<Formation />} />
-          <Route path="/EmotionalManagement" element={<EmotionalManagement />} />
-          <Route path="/Parenting" element={<Parenting />} />
-          <Route path="/EffectiveCommunication" element={<EffectiveCommunication />} />
-          <Route path="/Coaching" element={<Coaching />} />
-          <Route path="/CoachingJourney" element={<CoachingJourney />} />
-
-          {/* <Route path="/halal-project" element={<HalalProject />} /> */}
-          {/* Routes générales */}
-          <Route path="/legal-notices" element={<LegalNotices />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-
-        <Footer />  {/* Footer global */}
+              <Footer />  {/* Footer global */}
+            </>
+          )}
+        </div>
       </Router>
-    </AppProvider>
+    </AppProvider >
   );
 };
 

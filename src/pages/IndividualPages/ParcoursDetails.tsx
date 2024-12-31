@@ -74,7 +74,7 @@ import image1 from '../../assets/img/services.jpg'; // Remplace par le chemin co
 import image2 from '../../assets/img/services.jpg'; // Remplace par le chemin correct
 import image3 from '../../assets/img/services.jpg'; // Remplace par le chemin correct
 import featureImage1 from '../../assets/img/devperso/10564.jpg';
-import featureImage2 from '../../assets/img/comefficacité/coefficacité (1).jpg';
+// import featureImage2 from '../../assets/img/comefficacité/coefficacité (1).jpg';
 import featureImage3 from '../../assets/img/bilanc/137653.jpg';
 
 const ParcoursDetails: React.FC = () => {
@@ -135,14 +135,14 @@ const ParcoursDetails: React.FC = () => {
                                 <Button variant="primary" className="btn-get-started">Get Started</Button>
                             </div>
                             <div className="col-lg-7 order-1 order-lg-2" data-aos="zoom-out" data-aos-delay="100">
-                                <img src={featureImage1} alt="Feature 1 Image" className="img-fluid rounded-3 shadow-lg" />
+                                <img src={featureImage1} alt="Feature 1" className="img-fluid rounded-3 shadow-lg" />
                             </div>
                         </div>
 
                         {/* Feature Item 2 */}
                         <div className="row gy-4 align-items-stretch justify-content-between features-item">
                             <div className="col-lg-6 d-flex align-items-center features-img-bg" data-aos="zoom-out">
-                                <img src={featureImage3} className="img-fluid" alt="Feature 2 Image" />
+                                <img src={featureImage3} className="img-fluid" alt="Feature 2" />
                             </div>
                             <div className="col-lg-5 d-flex justify-content-center flex-column" data-aos="fade-up">
                                 <h3>Sunt consequatur ad ut est nulla</h3>

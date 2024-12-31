@@ -446,7 +446,7 @@ h6 {
     justify-content: center;
     border-radius: 50%;
     transition: 0.3s;
-    background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+    background-color: #ff6f00;
   }
 
   .navmenu a i:hover,
@@ -517,7 +517,7 @@ h6 {
 }
 @media (max-width: 768px) {
   .bi-house-door {
-    color: white !important;
+    color: #fff;
     transform: rotate(
       0deg
     ) !important; /* Assure que l'icône est orientée correctement */
@@ -2936,7 +2936,7 @@ section,
 body {
   overflow-x: hidden;
 }
-/*  */
+
 /* Overlay.css */
 .overlay {
   position: fixed;
@@ -3150,9 +3150,9 @@ body {
   transform: scale(1.05); /* Légère augmentation de la taille du bouton */
 }
 /* Lorsque le sous-menu 'À propos' est ouvert */
-/* .open-link { */
-/* color: #ff6f00; Orange foncé */
-/* } */
+.open-link {
+  color: #ff6f00;
+}
 
 /* Lorsque le chevron est tourné (ouvert) */
 .rotate-chevron {
@@ -4771,8 +4771,8 @@ body {
 
 /* .testimonials .quote-icon-right { */
 /* right: 450px; /* Positionner l'icône à droite à 450px */
-/* transform: translateY(-50%); /* Pas de changement horizontal */
-/* } */
+/*transform: translateY(-50%);*/ /* Pas de changement horizontal 
+ }*/
 
 /* ================================================
    AJUSTEMENTS POUR LES PETITS ÉCRANS (tablettes et mobiles)
@@ -4834,10 +4834,10 @@ ul li {
 }
 
 /* Style de l'icône */
-ul li i {
+/* ul li i {
   margin-right: 10px;
   color: #3498db; /* Couleur de l'icône */
-}
+/* } */
 
 /* Style du texte principal (le titre) */
 ul li span {
@@ -5509,11 +5509,11 @@ ul li[data-aos="fade-up"]:hover {
 } */
 
 /* Lorsque l'élément est actif (au clic) */
-/* .features .nav-link.active {
+.features .nav-link.active {
   background-color: var(--accent-color);
   color: var(--contrast-color);
   border-color: var(--accent-color);
-} */
+}
 
 /* .features .nav-link.active i {
   color: #c81a1a;
@@ -5542,7 +5542,6 @@ ul li[data-aos="fade-up"]:hover {
   transform: translate(-50%, -50%);
   transition: all 0.3s ease; */
 /* } */
-*/
 
 /* Effet au survol du bouton vidéo */
 #about .glightbox:hover {
@@ -5633,17 +5632,16 @@ ul li[data-aos="fade-up"]:hover {
   /* } */
 
   /* Lors du clic (élément actif) : fond orange, texte et icône blancs */
-  /* .features .nav-link.active {
+  /* .features .nav-link.active {*/
   background-color: var(--accent-color); /* Fond orange */
   color: var(--contrast-color); /* Texte blanc */
   border-color: var(--accent-color); /* Bordure orange */
   box-shadow: 0 4px 8px rgba(255, 122, 0, 0.4); /* Ombre orange */
 }
-*/
 
 /* .features .nav-link.active i {
-  color: var(--contrast-color); /* Icône devient blanche au clic */
-/* background-color: var(--accent-color); /* Fond orange pour l'icône */
+  color: var(--contrast-color);*/ /* Icône devient blanche au clic */
+/* background-color: var(--accent-color); */ /* Fond orange pour l'icône */
 /* } */
 
 /* Animation sur la section Featured Services */
@@ -5787,11 +5785,11 @@ a {
 [data-aos].aos-animate {
   pointer-events: auto;
 }
-/* .features .nav-link.active {
+.features .nav-link.active {
   background: var(--accent-color);
   color: var(--contrast-color);
   border-color: var(--accent-color);
-} */
+}
 /* Style de base pour le bouton nav-link */
 .features .nav-link {
   display: flex;
@@ -6009,9 +6007,9 @@ a {
   color: var(--bs-white);
 }
 
-/*** Services End ***/
+/* Services End */
 
-/*** Project Start ***/
+/* Project Start */
 
 .project-img {
   position: relative;
@@ -6073,4 +6071,27 @@ a {
 .project-item:hover .project-img::before,
 .project-item:hover .project-img::after {
   opacity: 0;
+}
+/* Style pour les menus déroulants mobiles */
+ul.dropdown-menu {
+  display: none;
+  list-style: none;
+
+  margin: 0;
+}
+
+ul.dropdown-menu li {
+  padding: 10px;
+}
+
+a.active + ul.dropdown-menu {
+  display: block; /* Affiche le menu si l'élément est actif */
+}
+.dropdown-toggle::after {
+  display: none !important;
+}
+.blurred {
+  filter: blur(5px);
+  pointer-events: none;
+  user-select: none;
 }

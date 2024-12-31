@@ -216,32 +216,50 @@ import { InlineWidget } from 'react-calendly';
 const Navbars: React.FC = () => {
 
     const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-    const [dropdownOpen, setDropdownOpen] = useState<string>(''); // Utilisation d'un état pour chaque dropdown
+    const [dropdownOpen, setDropdownOpen] = useState<string>('');
     const [isMobile, setIsMobile] = useState<boolean>(false);
     const [showModal, setShowModal] = useState(false);
     const navigate = useNavigate();
 
     const handleMouseEnter = (dropdown: string) => {
-        setDropdownOpen(dropdown); // Ouvre le menu pour un dropdown spécifique
+        if (!isMobile) {
+            setDropdownOpen(dropdown);
+        }
     };
 
     const handleMouseLeave = () => {
-        setDropdownOpen(''); // Ferme tous les dropdowns
+        if (!isMobile) {
+            setDropdownOpen('');
+        }
     };
 
     const handleClick = (e: React.MouseEvent, navigateTo: string) => {
-        e.preventDefault(); // Empêche la navigation par défaut
-        setDropdownOpen(''); // Ferme le dropdown
-        navigate(navigateTo); // Effectue la navigation manuellement
+        e.preventDefault();
+        setDropdownOpen('');
+        if (isMobile) {
+            setIsMenuOpen(false);
+            document.body.classList.remove('mobile-nav-active');
+        }
+        navigate(navigateTo);
+    };
+
+
+    const toggleDropdown = (dropdown: string) => {
+        if (isMobile) {
+            setDropdownOpen(prevState => prevState === dropdown ? '' : dropdown);
+        }
     };
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
+        setDropdownOpen(''); // Ajoutez cette ligne
         document.body.classList.toggle('mobile-nav-active', !isMenuOpen);
     };
 
+
     const closeMenu = () => {
         setIsMenuOpen(false);
+        setDropdownOpen('');
         document.body.classList.remove('mobile-nav-active');
     };
 
@@ -279,43 +297,48 @@ const Navbars: React.FC = () => {
                                 <i className="bi bi-house-door" style={{ color: 'orange', fontSize: '20px' }}></i>
                             </NavLink>
                         </li>
-
-                        {/* Dropdown "À propos" */}
                         <li>
                             <NavDropdown
-                                title="À propos"
+                                title={
+                                    <>
+                                        À propos
+                                        <i className={`bi ${dropdownOpen === 'about' ? 'bi-chevron-up' : 'bi-chevron-down'}`}></i>
+                                    </>
+                                }
                                 id="about-nav-dropdown"
                                 show={dropdownOpen === 'about'}
                                 onMouseEnter={() => handleMouseEnter('about')}
                                 onMouseLeave={handleMouseLeave}
+                                onClick={() => toggleDropdown('about')}
                             >
                                 <NavDropdown.Item as={NavLink} to="/teams" onClick={(e) => handleClick(e, '/team')}>Equipe</NavDropdown.Item>
                                 <NavDropdown.Item as={NavLink} to="/testimonials" onClick={(e) => handleClick(e, '/testimonials')}>Temoignages</NavDropdown.Item>
                                 <NavDropdown.Item as={NavLink} to="/portfolio" onClick={(e) => handleClick(e, '/portfolio')}>Portfolio</NavDropdown.Item>
                             </NavDropdown>
                         </li>
-
-                        {/* Dropdown "Prestations" */}
                         <li>
                             <NavDropdown
-                                title="Prestations"
+                                title={
+                                    <>
+                                        Prestations
+                                        <i className={`bi ${dropdownOpen === 'prestations' ? 'bi-chevron-up' : 'bi-chevron-down'}`}></i>
+                                    </>
+                                }
                                 id="prestations-nav-dropdown"
                                 show={dropdownOpen === 'prestations'}
                                 onMouseEnter={() => handleMouseEnter('prestations')}
                                 onMouseLeave={handleMouseLeave}
+                                onClick={() => toggleDropdown('prestations')}
                             >
                                 <NavDropdown.Item as={NavLink} to="/formation" onClick={(e) => handleClick(e, '/formation')}>Formation</NavDropdown.Item>
                                 <NavDropdown.Item as={NavLink} to="/Coaching" onClick={(e) => handleClick(e, '/coaching')}>Accompagnement personnalisé</NavDropdown.Item>
                                 <NavDropdown.Item as={NavLink} to="/CoachingJourney" onClick={(e) => handleClick(e, '/coachingJourney')}>Parcours d'accompagnement</NavDropdown.Item>
                             </NavDropdown>
                         </li>
-
-                        {/* Autres liens */}
                         <li><NavLink to="/pricing" onClick={closeMenu}>Prix</NavLink></li>
                         <li><NavLink to="/blog" onClick={closeMenu}>Blog</NavLink></li>
                         <li><NavLink to="/contact" onClick={closeMenu}>Contact</NavLink></li>
                     </ul>
-                    <i className={`mobile-nav-toggle d-xl-none bi ${isMenuOpen ? 'bi-x' : 'bi-list'}`} onClick={toggleMenu}></i>
                 </nav>
 
                 <div className="header-social-links">
@@ -338,6 +361,8 @@ const Navbars: React.FC = () => {
                     <InlineWidget url="https://calendly.com/definir/prise-de-rendez-vous" />
                 </Modal.Body>
             </Modal>
+
+            <i className={`mobile-nav-toggle d-xl-none bi ${isMenuOpen ? 'bi-x' : 'bi-list'}`} onClick={toggleMenu}></i>
         </header>
     );
 };
