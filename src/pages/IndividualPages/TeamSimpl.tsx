@@ -64,7 +64,8 @@
 import React, { useState, useEffect } from 'react';
 import teamImage1 from '../../assets/img/team/team-1.jpg'; // Assurez-vous que le chemin est correct
 import teamImage2 from '../../assets/img/team/team-2.jpg'; // Assurez-vous que le chemin est correct
-
+import teamImage3 from '../../assets/img/team/team-3.jpg'; // Assurez-vous que le chemin est correct
+import teamImage4 from '../../assets/img/team/team-4.jpg';
 const TeamSimpl = () => {
     const [loading, setLoading] = useState(true);
 
@@ -158,7 +159,42 @@ const TeamSimpl = () => {
                                     </div>
                                 </div>
 
-                                {/* Ajoute d'autres membres de l'équipe ici */}
+                                <div className="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+                                    <div className="team-member">
+                                        <div className="member-img">
+                                            <img src={teamImage3} className="img-fluid" alt="William Anderson" />
+                                            <div className="social">
+                                                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><i className="bi bi-twitter"></i></a>
+                                                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><i className="bi bi-facebook"></i></a>
+                                                <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><i className="bi bi-instagram"></i></a>
+                                                <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer"><i className="bi bi-linkedin"></i></a>
+                                            </div>
+                                        </div>
+                                        <div className="member-info">
+                                            <h4>William Anderson</h4>
+                                            <span>CTO</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
+                                    <div className="team-member">
+                                        <div className="member-img">
+                                            <img src={teamImage4} className="img-fluid" alt="Amanda Jepson" />
+                                            <div className="social">
+                                                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><i className="bi bi-twitter"></i></a>
+                                                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><i className="bi bi-facebook"></i></a>
+                                                <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><i className="bi bi-instagram"></i></a>
+                                                <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer"><i className="bi bi-linkedin"></i></a>
+                                            </div>
+                                        </div>
+                                        <div className="member-info">
+                                            <h4>Amanda Jepson</h4>
+                                            <span>Accountant</span>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </section>

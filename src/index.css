@@ -4798,12 +4798,12 @@ body {
   }
 }
 .testimonials .quote-icon-left {
-  left: 370px; /* Positionner l'icône à gauche à 450px */
+  left: 470px; /* Positionner l'icône à gauche à 450px */
   transform: translateY(-50%) scaleX(-1); /* Inverser horizontalement */
 }
 
 .testimonials .quote-icon-right {
-  right: 370px; /* Positionner l'icône à droite à 450px */
+  right: 470px; /* Positionner l'icône à droite à 450px */
   transform: translateY(-50%); /* Pas de changement horizontal */
 }
 
@@ -5073,12 +5073,12 @@ ul li[data-aos="fade-up"]:hover {
 /* Écran de 768px ou moins (tablettes et petits écrans) */
 @media (max-width: 768px) {
   .testimonials .quote-icon-left {
-    left: 310px; /* Positionner l'icône à gauche à 150px */
+    left: 350px; /* Positionner l'icône à gauche à 150px */
     transform: translateY(-50%) scaleX(-1); /* Inverser horizontalement */
   }
 
   .testimonials .quote-icon-right {
-    right: 310px; /* Positionner l'icône à droite à 150px */
+    right: 350px; /* Positionner l'icône à droite à 150px */
     transform: translateY(-50%);
   }
 }

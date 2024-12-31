@@ -311,9 +311,12 @@ const Navbars: React.FC = () => {
                                 onMouseLeave={handleMouseLeave}
                                 onClick={() => toggleDropdown('about')}
                             >
+                                <NavDropdown.Item as={NavLink} to="/about" onClick={(e) => handleClick(e, '/about')}>A Propos</NavDropdown.Item>
                                 <NavDropdown.Item as={NavLink} to="/teams" onClick={(e) => handleClick(e, '/team')}>Equipe</NavDropdown.Item>
                                 <NavDropdown.Item as={NavLink} to="/testimonials" onClick={(e) => handleClick(e, '/testimonials')}>Temoignages</NavDropdown.Item>
                                 <NavDropdown.Item as={NavLink} to="/portfolio" onClick={(e) => handleClick(e, '/portfolio')}>Portfolio</NavDropdown.Item>
+                                <NavDropdown.Item as={NavLink} to="/clients" onClick={(e) => handleClick(e, '/clients')}>Clients</NavDropdown.Item>
+                                <NavDropdown.Item as={NavLink} to="/faq" onClick={(e) => handleClick(e, '/faq')}>Faq</NavDropdown.Item>
                             </NavDropdown>
                         </li>
                         <li>
